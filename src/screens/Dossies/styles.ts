@@ -3,37 +3,52 @@ import fonts from '../../styles/fonts';
 import colors from '../../styles/colors';
 
 export const styles = StyleSheet.create({
-  homeContainer: {
+  dossiesContainer: {
     flex: 1,
     backgroundColor: colors.white,
   },
 
-  homeLogoContainer: {
+  dossiesBackIcon: {
+    position: 'absolute',
+    left: 20,
+    top: 20,
+    zIndex: 10,
+  },
+
+  dossiesLogoContainer: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 160,
-    marginVertical: 60,
+    height: 140,
+    paddingVertical: 20,
   },
 
-  homeLogo: {
+  dossiesLogo: {
     height: '100%',
   },
 
-  homeButtonsContainer: {
+  dossiesButtonsContainer: {
     marginBottom: 40,
   },
 
-  homeButton: {
+  dossiesTitle: {
+    color: colors.black,
+    fontFamily: fonts.f600semiBold,
+    fontSize: 24,
+    textAlign: 'center',
+    paddingBottom: 12,
+  },
+
+  dossiesButton: {
     backgroundColor: colors.black,
     alignSelf: 'center',
     alignItems: 'center',
-    width: '70%',
-    paddingVertical: 16,
-    marginBottom: 20,
+    width: '85%',
+    paddingVertical: 8,
+    marginBottom: 4,
   },
 
-  homeButtonText: {
+  dossiesButtonText: {
     color: colors.white,
     fontFamily: fonts.f400regular,
   },
