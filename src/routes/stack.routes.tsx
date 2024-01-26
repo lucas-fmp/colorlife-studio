@@ -9,19 +9,22 @@ import AnaliseSelecionarImagem from '../screens/AnaliseSelecionarImagem';
 import AnaliseArquivoPronto from '../screens/AnaliseArquivoPronto';
 import AnaliseVisualizar from '../screens/AnaliseVisualizar';
 
-export type ScreenNames = [
-  'Splash',
-  'Home',
-  'Cartelas',
-  'Dossies',
-  'AnaliseSelecionarImagem',
-  'AnaliseArquivoPronto',
-  'AnaliseVisualizar'
-];
+type DynamicParamValue = string | number;
 
-export type ScreenParams = { [key: string]: any };
+type DynamicRouteParams = {
+  [key: string]: DynamicParamValue;
+};
 
-export type RootStackParamList = Record<ScreenNames[number], ScreenParams>;
+export type RootStackParamList = {
+  Splash: undefined;
+  Home: undefined;
+  Cartelas: undefined;
+  Dossies: undefined;
+  AnaliseSelecionarImagem: undefined;
+  AnaliseArquivoPronto: DynamicRouteParams;
+  AnaliseVisualizar: DynamicRouteParams;
+};
+
 export type StackNavigation = NavigationProp<RootStackParamList>;
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

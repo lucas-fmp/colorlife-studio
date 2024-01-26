@@ -6,7 +6,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { pickImageAndDetectFace } from '../../utils/imagePicker';
-import Svg, { Image as SvgImage, ClipPath, Ellipse } from 'react-native-svg';
+// import Svg, { Image as SvgImage, ClipPath, Ellipse } from 'react-native-svg';
 import { StackNavigation } from '../../routes/stack.routes';
 
 export default function AnaliseSelecionarImagem() {

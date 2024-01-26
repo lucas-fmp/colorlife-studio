@@ -18,7 +18,7 @@ export async function pickImageAndDetectFace(
   setHasFace: Function
 ) {
   const result = await ImagePicker.launchImageLibraryAsync({
-    mediaTypes: ImagePicker.MediaTypeOptions.All,
+    mediaTypes: ImagePicker.MediaTypeOptions.Images,
     aspect: [1, 1],
     quality: 1,
   });

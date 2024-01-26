@@ -4,6 +4,7 @@ import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../../routes/stack.routes';
 import { useEffect, useState } from 'react';
 import fonts from '../../styles/fonts';
+import colors from '../../styles/colors';
 
 type Props = {
   route: RouteProp<RootStackParamList, 'AnaliseVisualizar'>;
@@ -11,6 +12,7 @@ type Props = {
 
 export default function AnaliseVisualizar({ route }: Props) {
   const { uri } = route.params;
+
   const [turnPhone, setTurnPhone] = useState(true);
 
   useEffect(() => {
@@ -24,7 +26,11 @@ export default function AnaliseVisualizar({ route }: Props) {
   if (turnPhone) {
     return (
       <View style={styles.turnPhoneContainer}>
-        <StatusBar hidden />
+        <StatusBar
+          barStyle="light-content"
+          translucent={false}
+          backgroundColor={colors.black}
+        />
         <Text style={styles.turnPhoneText}>
           Vire o celular para a{' '}
           <Text style={{ fontFamily: fonts.f700bold }}>esquerda</Text> para
@@ -43,7 +49,11 @@ export default function AnaliseVisualizar({ route }: Props) {
 
   return (
     <View style={styles.analiseContainer}>
-      <StatusBar hidden />
+      <StatusBar
+        barStyle="dark-content"
+        translucent={false}
+        backgroundColor={colors.white}
+      />
     </View>
   );
 }
