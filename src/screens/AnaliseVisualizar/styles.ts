@@ -32,5 +32,49 @@ export const styles = StyleSheet.create({
   analiseContainer: {
     flex: 1,
     backgroundColor: colors.white,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  analiseBackIcon: {
+    position: 'absolute',
+    left: 20,
+    top: 30,
+    zIndex: 10,
+  },
+
+  swiperContainer: {
+    flex: 1,
+    transform: [{ rotate: '90deg' }],
+  },
+
+  viewPager: {
+    flex: 1,
+  },
+
+  swiperPage: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  swiperText: {
+    position: 'absolute',
+    top: 0,
+    paddingVertical: 20,
+    fontFamily: fonts.f400regular,
+    fontSize: 10,
+    opacity: 0.5,
+  },
+
+  swiperTitle: {
+    fontFamily: fonts.f500medium,
+    fontSize: 40,
+  },
+
+  comparativeCardsContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'row',
   },
 });

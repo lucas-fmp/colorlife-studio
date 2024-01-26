@@ -6,7 +6,6 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { pickImageAndDetectFace } from '../../utils/imagePicker';
-// import Svg, { Image as SvgImage, ClipPath, Ellipse } from 'react-native-svg';
 import { StackNavigation } from '../../routes/stack.routes';
 
 export default function AnaliseSelecionarImagem() {
@@ -67,20 +66,6 @@ export default function AnaliseSelecionarImagem() {
           </Text>
         )}
       </View>
-
-      {/* {image && (
-        <Svg width="200" height="200" rotation={90}>
-          <ClipPath id="clip">
-            <Ellipse cx="100" cy="100" rx="75" ry="100" />
-          </ClipPath>
-          <SvgImage
-            href={{ uri: image }}
-            width="200"
-            height="200"
-            clipPath="url(#clip)"
-          />
-        </Svg>
-      )} */}
 
       <Footer />
     </View>

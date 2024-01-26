@@ -9,7 +9,7 @@ import AnaliseSelecionarImagem from '../screens/AnaliseSelecionarImagem';
 import AnaliseArquivoPronto from '../screens/AnaliseArquivoPronto';
 import AnaliseVisualizar from '../screens/AnaliseVisualizar';
 
-type DynamicParamValue = string | number;
+type DynamicParamValue = string;
 
 type DynamicRouteParams = {
   [key: string]: DynamicParamValue;
