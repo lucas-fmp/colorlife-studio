@@ -4,7 +4,7 @@ import Footer from '../../components/Footer';
 import colors from '../../styles/colors';
 import { MaterialIcons } from '@expo/vector-icons';
 import { RouteProp, useNavigation } from '@react-navigation/native';
-import { RootStackParamList } from '../../routes/stack.routes';
+import { RootStackParamList, StackNavigation } from '../../routes/stack.routes';
 
 type Props = {
   route: RouteProp<RootStackParamList, 'AnaliseArquivoPronto'>;
@@ -14,6 +14,7 @@ export default function AnaliseArquivoPronto({ route }: Props) {
   const { uri } = route.params;
 
   const { goBack } = useNavigation();
+  const { navigate } = useNavigation<StackNavigation>();
 
   return (
     <View style={styles.analiseContainer}>
@@ -44,7 +45,10 @@ export default function AnaliseArquivoPronto({ route }: Props) {
           PDF’s
         </Text>
 
-        <TouchableOpacity style={styles.analiseButton}>
+        <TouchableOpacity
+          style={styles.analiseButton}
+          onPress={() => navigate('AnaliseVisualizar', { uri })}
+        >
           <Text style={styles.analiseButtonText}>
             VISUALIZAR PELO APLICATIVO
           </Text>

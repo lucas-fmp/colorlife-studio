@@ -7,6 +7,7 @@ import Dossies from '../screens/Dossies';
 import Cartelas from '../screens/Cartelas';
 import AnaliseSelecionarImagem from '../screens/AnaliseSelecionarImagem';
 import AnaliseArquivoPronto from '../screens/AnaliseArquivoPronto';
+import AnaliseVisualizar from '../screens/AnaliseVisualizar';
 
 export type ScreenNames = [
   'Splash',
@@ -14,7 +15,8 @@ export type ScreenNames = [
   'Cartelas',
   'Dossies',
   'AnaliseSelecionarImagem',
-  'AnaliseArquivoPronto'
+  'AnaliseArquivoPronto',
+  'AnaliseVisualizar'
 ];
 
 export type ScreenParams = { [key: string]: any };
@@ -40,6 +42,7 @@ function StackNavigator() {
         name="AnaliseArquivoPronto"
         component={AnaliseArquivoPronto}
       />
+      <Stack.Screen name="AnaliseVisualizar" component={AnaliseVisualizar} />
     </Stack.Navigator>
   );
 }
