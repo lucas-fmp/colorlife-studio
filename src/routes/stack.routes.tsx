@@ -8,6 +8,9 @@ import Cartelas from '../screens/Cartelas';
 import AnaliseSelecionarImagem from '../screens/AnaliseSelecionarImagem';
 import AnaliseArquivoPronto from '../screens/AnaliseArquivoPronto';
 import AnaliseVisualizar from '../screens/AnaliseVisualizar';
+import MelhoresCoresSelecionarImagem from '../screens/MelhoresCoresSelecionarImagem';
+import MelhoresCoresArquivoPronto from '../screens/MelhoresCoresArquivoPronto';
+import MelhoresCoresVisualizar from '../screens/MelhoresCoresVisualizar';
 
 type DynamicParamValue = string;
 
@@ -18,11 +21,14 @@ type DynamicRouteParams = {
 export type RootStackParamList = {
   Splash: undefined;
   Home: undefined;
-  Cartelas: undefined;
-  Dossies: undefined;
   AnaliseSelecionarImagem: undefined;
   AnaliseArquivoPronto: DynamicRouteParams;
   AnaliseVisualizar: DynamicRouteParams;
+  MelhoresCoresSelecionarImagem: undefined;
+  MelhoresCoresArquivoPronto: DynamicRouteParams;
+  MelhoresCoresVisualizar: DynamicRouteParams;
+  Cartelas: undefined;
+  Dossies: undefined;
 };
 
 export type StackNavigation = NavigationProp<RootStackParamList>;
@@ -35,8 +41,6 @@ function StackNavigator() {
       <Stack.Screen name="Splash" component={Splash} />
 
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Cartelas" component={Cartelas} />
-      <Stack.Screen name="Dossies" component={Dossies} />
       <Stack.Screen
         name="AnaliseSelecionarImagem"
         component={AnaliseSelecionarImagem}
@@ -46,6 +50,20 @@ function StackNavigator() {
         component={AnaliseArquivoPronto}
       />
       <Stack.Screen name="AnaliseVisualizar" component={AnaliseVisualizar} />
+      <Stack.Screen
+        name="MelhoresCoresSelecionarImagem"
+        component={MelhoresCoresSelecionarImagem}
+      />
+      <Stack.Screen
+        name="MelhoresCoresArquivoPronto"
+        component={MelhoresCoresArquivoPronto}
+      />
+      <Stack.Screen
+        name="MelhoresCoresVisualizar"
+        component={MelhoresCoresVisualizar}
+      />
+      <Stack.Screen name="Cartelas" component={Cartelas} />
+      <Stack.Screen name="Dossies" component={Dossies} />
     </Stack.Navigator>
   );
 }

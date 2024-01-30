@@ -15,7 +15,6 @@ import fonts from '../../styles/fonts';
 import colors from '../../styles/colors';
 import PagerView from 'react-native-pager-view';
 import Footer from '../../components/Footer';
-import Svg, { Image as SvgImage, ClipPath, Ellipse } from 'react-native-svg';
 import ComparativeCard from '../../components/ComparativeCard';
 
 type Props = {
@@ -85,7 +84,7 @@ export default function AnaliseVisualizar({ route }: Props) {
               />
             </TouchableOpacity>
 
-            <Text style={styles.swiperText}>
+            <Text style={styles.swiperHeader}>
               ANÁLISE DE COLORAÇÃO PESSOAL - DIGITAL
             </Text>
 
@@ -106,7 +105,7 @@ export default function AnaliseVisualizar({ route }: Props) {
               />
             </TouchableOpacity>
 
-            <Text style={[styles.swiperText, { letterSpacing: 4 }]}>
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
               SUBTOM DE PELE
             </Text>
 
@@ -141,7 +140,7 @@ export default function AnaliseVisualizar({ route }: Props) {
               />
             </TouchableOpacity>
 
-            <Text style={[styles.swiperText, { letterSpacing: 4 }]}>
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
               SUBTOM DE PELE
             </Text>
 
@@ -178,7 +177,7 @@ export default function AnaliseVisualizar({ route }: Props) {
               />
             </TouchableOpacity>
 
-            <Text style={[styles.swiperText, { letterSpacing: 4 }]}>
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
               SUBTOM DE PELE
             </Text>
 
@@ -213,7 +212,7 @@ export default function AnaliseVisualizar({ route }: Props) {
               />
             </TouchableOpacity>
 
-            <Text style={[styles.swiperText, { letterSpacing: 4 }]}>
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
               SUBTOM DE PELE
             </Text>
 
@@ -250,7 +249,7 @@ export default function AnaliseVisualizar({ route }: Props) {
               />
             </TouchableOpacity>
 
-            <Text style={[styles.swiperText, { letterSpacing: 4 }]}>
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
               SUBTOM DE PELE
             </Text>
 

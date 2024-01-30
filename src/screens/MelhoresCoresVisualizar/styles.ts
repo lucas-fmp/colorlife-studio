@@ -29,18 +29,18 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
 
-  analiseContainer: {
+  melhoresCoresContainer: {
     flex: 1,
     backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
   },
 
-  analiseBackIcon: {
+  melhoresCoresBackIcon: {
     position: 'absolute',
     left: 20,
     top: 30,
-    zIndex: 10,
+    zIndex: 20,
   },
 
   swiperContainer: {
@@ -71,10 +71,37 @@ export const styles = StyleSheet.create({
     fontSize: 40,
   },
 
+  swiperSubTitle: {
+    fontFamily: fonts.f500medium,
+    fontSize: 16,
+  },
+
+  swiperText: {
+    fontFamily: fonts.f400regular,
+    fontSize: 16,
+  },
+
   comparativeCardsContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'row',
+  },
+
+  termosContainer: {
+    width: '100%',
+    height: '100%',
+    paddingVertical: 25,
+    paddingHorizontal: 70,
+  },
+
+  termosTitle: {
+    fontFamily: fonts.f400regular,
+    fontSize: 24,
+  },
+
+  termosText: {
+    fontFamily: fonts.f400regular,
+    fontSize: 14,
   },
 });

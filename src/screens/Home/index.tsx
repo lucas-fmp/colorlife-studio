@@ -39,7 +39,10 @@ export default function Home() {
           <Text style={styles.homeButtonText}>ANÁLISE DIGITAL</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.homeButton} onPress={() => {}}>
+        <TouchableOpacity
+          style={styles.homeButton}
+          onPress={() => navigate('MelhoresCoresSelecionarImagem')}
+        >
           <Text style={styles.homeButtonText}>MELHORES CORES</Text>
         </TouchableOpacity>
         <TouchableOpacity
