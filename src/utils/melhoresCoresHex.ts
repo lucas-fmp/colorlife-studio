@@ -1,5 +1,5 @@
 export const veraoClaro = {
-  id: 'Verão Claro',
+  id: 'VERÃO CLARO',
   one: '#C0B2DB',
   two: '#73E0B9',
   three: '#F6F291',
@@ -11,7 +11,7 @@ export const veraoClaro = {
 };
 
 export const veraoFrio = {
-  id: 'Verão Frio',
+  id: 'VERÃO FRIO',
   one: '#7C7FB2',
   two: '#53CEBA',
   three: '#8AC0E4',
@@ -23,7 +23,7 @@ export const veraoFrio = {
 };
 
 export const veraoSuave = {
-  id: 'Verão Suave',
+  id: 'VERÃO SUAVE',
   one: '#C68C8B',
   two: '#87495E',
   three: '#5087A3',
@@ -35,7 +35,7 @@ export const veraoSuave = {
 };
 
 export const invernoFrio = {
-  id: 'Inverno Frio',
+  id: 'INVERNO FRIO',
   one: '#AF2645',
   two: '#1DA28E',
   three: '#CD1565',
@@ -47,7 +47,7 @@ export const invernoFrio = {
 };
 
 export const invernoBrilhante = {
-  id: 'Inverno Brilhante',
+  id: 'INVERNO BRILHANTE',
   one: '#D00245',
   two: '#008F7A',
   three: '#ED009B',
@@ -59,7 +59,7 @@ export const invernoBrilhante = {
 };
 
 export const invernoEscuro = {
-  id: 'Inverno Escuro',
+  id: 'INVERNO ESCURO',
   one: '#A0104E',
   two: '#113B71',
   three: '#156558',
@@ -71,7 +71,7 @@ export const invernoEscuro = {
 };
 
 export const primaveraClara = {
-  id: 'Primavera Clara',
+  id: 'PRIMAVERA CLARA',
   one: '#F69E9D',
   two: '#FBCC64',
   three: '#71C7DC',
@@ -83,7 +83,7 @@ export const primaveraClara = {
 };
 
 export const primaveraQuente = {
-  id: 'Primavera Quente',
+  id: 'PRIMAVERA QUENTE',
   one: '#FCD259',
   two: '#FF6E3B',
   three: '#E03D3B',
@@ -95,7 +95,7 @@ export const primaveraQuente = {
 };
 
 export const primaveraBrilhante = {
-  id: 'Primavera Brilhante',
+  id: 'PRIMAVERA BRILHANTE',
   one: '#2F702F',
   two: '#F9E123',
   three: '#1470BC',
@@ -107,7 +107,7 @@ export const primaveraBrilhante = {
 };
 
 export const outonoSuave = {
-  id: 'Outono Suave',
+  id: 'OUTONO SUAVE',
   one: '#68879C',
   two: '#B55D5B',
   three: '#949159',
@@ -119,7 +119,7 @@ export const outonoSuave = {
 };
 
 export const outonoQuente = {
-  id: 'Outono Quente',
+  id: 'OUTONO QUENTE',
   one: '#00758D',
   two: '#D22F38',
   three: '#2F7031',
@@ -131,7 +131,7 @@ export const outonoQuente = {
 };
 
 export const outonoEscuro = {
-  id: 'Outono Escuro',
+  id: 'OUTONO ESCURO',
   one: '#4E4A1E',
   two: '#A62F30',
   three: '#1E6572',

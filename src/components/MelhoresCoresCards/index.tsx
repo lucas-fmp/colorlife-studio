@@ -215,7 +215,7 @@ export default function MelhoresCoresCards({
             <ImageBackground
               style={{ flex: 1 }}
               source={
-                cartela.id.includes('Verão') || cartela.id.includes('Inverno')
+                cartela.id.includes('VERÃO') || cartela.id.includes('INVERNO')
                   ? require('../../assets/silver-texture.png')
                   : require('../../assets/gold-texture.png')
               }

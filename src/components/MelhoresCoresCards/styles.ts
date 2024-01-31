@@ -26,9 +26,10 @@ export const styles = StyleSheet.create({
 
   melhoresCoresNameText: {
     fontFamily: fonts.f400regular,
-    fontSize: 20,
+    fontSize: 16,
     backgroundColor: colors.white,
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
+    paddingTop: 3,
   },
 
   faceSVG: {
