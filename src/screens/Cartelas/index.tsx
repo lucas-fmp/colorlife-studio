@@ -48,7 +48,7 @@ export default function Cartelas() {
             styles.cartelasButton,
             { backgroundColor: colors.invernoBrilhante },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsCartelas.invernoBrilhante)}
         >
           <Text style={styles.cartelasButtonText}>INVERNO BRILHANTE</Text>
         </TouchableOpacity>
@@ -57,7 +57,7 @@ export default function Cartelas() {
             styles.cartelasButton,
             { backgroundColor: colors.invernoEscuro },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsCartelas.invernoEscuro)}
         >
           <Text style={styles.cartelasButtonText}>INVERNO ESCURO</Text>
         </TouchableOpacity>
@@ -66,7 +66,7 @@ export default function Cartelas() {
             styles.cartelasButton,
             { backgroundColor: colors.invernoFrio },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsCartelas.invernoFrio)}
         >
           <Text style={styles.cartelasButtonText}>INVERNO FRIO</Text>
         </TouchableOpacity>
@@ -102,7 +102,7 @@ export default function Cartelas() {
             styles.cartelasButton,
             { backgroundColor: colors.primaveraBrilhante },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsCartelas.primaveraBrilhante)}
         >
           <Text style={styles.cartelasButtonText}>PRIMAVERA BRILHANTE</Text>
         </TouchableOpacity>
@@ -111,7 +111,7 @@ export default function Cartelas() {
             styles.cartelasButton,
             { backgroundColor: colors.primaveraClara },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsCartelas.primaveraClara)}
         >
           <Text style={styles.cartelasButtonText}>PRIMAVERA CLARA</Text>
         </TouchableOpacity>
@@ -120,7 +120,7 @@ export default function Cartelas() {
             styles.cartelasButton,
             { backgroundColor: colors.primaveraQuente },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsCartelas.primaveraQuente)}
         >
           <Text style={styles.cartelasButtonText}>PRIMAVERA QUENTE</Text>
         </TouchableOpacity>

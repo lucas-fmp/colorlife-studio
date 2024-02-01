@@ -5,12 +5,14 @@ import {
   TouchableOpacity,
   StatusBar,
   ScrollView,
+  Linking,
 } from 'react-native';
 import { styles } from './styles';
 import Footer from '../../components/Footer';
 import colors from '../../styles/colors';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import urlsDossies from '../../utils/urlsDossies';
 
 export default function Dossies() {
   const { goBack } = useNavigation();
@@ -43,7 +45,7 @@ export default function Dossies() {
             styles.dossiesButton,
             { backgroundColor: colors.invernoBrilhante },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsDossies.invernoBrilhante)}
         >
           <Text style={styles.dossiesButtonText}>INVERNO BRILHANTE</Text>
         </TouchableOpacity>
@@ -52,7 +54,7 @@ export default function Dossies() {
             styles.dossiesButton,
             { backgroundColor: colors.invernoEscuro },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsDossies.invernoEscuro)}
         >
           <Text style={styles.dossiesButtonText}>INVERNO ESCURO</Text>
         </TouchableOpacity>
@@ -61,7 +63,7 @@ export default function Dossies() {
             styles.dossiesButton,
             { backgroundColor: colors.invernoFrio },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsDossies.invernoFrio)}
         >
           <Text style={styles.dossiesButtonText}>INVERNO FRIO</Text>
         </TouchableOpacity>
@@ -70,7 +72,7 @@ export default function Dossies() {
             styles.dossiesButton,
             { backgroundColor: colors.outonoEscuro },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsDossies.outonoEscuro)}
         >
           <Text style={styles.dossiesButtonText}>OUTONO ESCURO</Text>
         </TouchableOpacity>
@@ -79,7 +81,7 @@ export default function Dossies() {
             styles.dossiesButton,
             { backgroundColor: colors.outonoQuente },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsDossies.outonoQuente)}
         >
           <Text style={styles.dossiesButtonText}>OUTONO QUENTE</Text>
         </TouchableOpacity>
@@ -88,7 +90,7 @@ export default function Dossies() {
             styles.dossiesButton,
             { backgroundColor: colors.outonoSuave },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsDossies.outonoSuave)}
         >
           <Text style={styles.dossiesButtonText}>OUTONO SUAVE</Text>
         </TouchableOpacity>
@@ -97,7 +99,7 @@ export default function Dossies() {
             styles.dossiesButton,
             { backgroundColor: colors.primaveraBrilhante },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsDossies.primaveraBrilhante)}
         >
           <Text style={styles.dossiesButtonText}>PRIMAVERA BRILHANTE</Text>
         </TouchableOpacity>
@@ -106,7 +108,7 @@ export default function Dossies() {
             styles.dossiesButton,
             { backgroundColor: colors.primaveraClara },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsDossies.primaveraClara)}
         >
           <Text style={styles.dossiesButtonText}>PRIMAVERA CLARA</Text>
         </TouchableOpacity>
@@ -115,25 +117,25 @@ export default function Dossies() {
             styles.dossiesButton,
             { backgroundColor: colors.primaveraQuente },
           ]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsDossies.primaveraQuente)}
         >
           <Text style={styles.dossiesButtonText}>PRIMAVERA QUENTE</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.dossiesButton, { backgroundColor: colors.veraoClaro }]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsDossies.veraoClaro)}
         >
           <Text style={styles.dossiesButtonText}>VERÃO CLARO</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.dossiesButton, { backgroundColor: colors.veraoFrio }]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsDossies.veraoFrio)}
         >
           <Text style={styles.dossiesButtonText}>VERÃO FRIO</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.dossiesButton, { backgroundColor: colors.veraoSuave }]}
-          onPress={() => {}}
+          onPress={() => Linking.openURL(urlsDossies.veraoSuave)}
         >
           <Text style={styles.dossiesButtonText}>VERÃO SUAVE</Text>
         </TouchableOpacity>

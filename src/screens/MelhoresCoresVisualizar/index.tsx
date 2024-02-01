@@ -5,7 +5,6 @@ import {
   Text,
   useWindowDimensions,
   TouchableOpacity,
-  ScrollView,
 } from 'react-native';
 import { styles } from './styles';
 import { RouteProp, useNavigation } from '@react-navigation/native';
@@ -13,9 +12,7 @@ import { RootStackParamList } from '../../routes/stack.routes';
 import { useEffect, useState } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 import fonts from '../../styles/fonts';
-import colors from '../../styles/colors';
 import PagerView from 'react-native-pager-view';
-import Footer from '../../components/Footer';
 import MelhoresCoresCards from '../../components/MelhoresCoresCards';
 import {
   veraoClaro,
@@ -54,11 +51,7 @@ export default function MelhoresCoresVisualizar({ route }: Props) {
   if (turnPhone) {
     return (
       <View style={styles.turnPhoneContainer}>
-        <StatusBar
-          barStyle="light-content"
-          translucent={false}
-          backgroundColor={colors.black}
-        />
+        <StatusBar hidden={true} />
         <Text style={styles.turnPhoneText}>
           Vire o celular para a{' '}
           <Text style={{ fontFamily: fonts.f700bold }}>esquerda</Text> para
@@ -77,11 +70,7 @@ export default function MelhoresCoresVisualizar({ route }: Props) {
 
   return (
     <View style={styles.melhoresCoresContainer}>
-      <StatusBar
-        barStyle="dark-content"
-        translucent={false}
-        backgroundColor={colors.white}
-      />
+      <StatusBar hidden={true} />
 
       <View
         style={[styles.swiperContainer, { maxHeight: width, width: height }]}

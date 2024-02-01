@@ -39,11 +39,7 @@ export default function AnaliseVisualizar({ route }: Props) {
   if (turnPhone) {
     return (
       <View style={styles.turnPhoneContainer}>
-        <StatusBar
-          barStyle="light-content"
-          translucent={false}
-          backgroundColor={colors.black}
-        />
+        <StatusBar hidden={true} />
         <Text style={styles.turnPhoneText}>
           Vire o celular para a{' '}
           <Text style={{ fontFamily: fonts.f700bold }}>esquerda</Text> para
@@ -62,11 +58,7 @@ export default function AnaliseVisualizar({ route }: Props) {
 
   return (
     <View style={styles.analiseContainer}>
-      <StatusBar
-        barStyle="dark-content"
-        translucent={false}
-        backgroundColor={colors.white}
-      />
+      <StatusBar hidden={true} />
 
       <View
         style={[styles.swiperContainer, { maxHeight: width, width: height }]}

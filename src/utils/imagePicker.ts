@@ -15,7 +15,8 @@ interface FaceBounds {
 
 export async function pickImageAndDetectFace(
   setImage: Function,
-  setHasFace: Function
+  setHasFace: Function,
+  setHasMultipleFaces: Function
 ) {
   const result = await ImagePicker.launchImageLibraryAsync({
     mediaTypes: ImagePicker.MediaTypeOptions.Images,
@@ -24,25 +25,31 @@ export async function pickImageAndDetectFace(
   });
 
   if (!result.canceled) {
-    detectFace(result.assets[0].uri, setImage, setHasFace);
+    detectFace(result.assets[0].uri, setImage, setHasFace, setHasMultipleFaces);
   }
 }
 
 async function detectFace(
   uri: string,
   setImage: Function,
-  setHasFace: Function
+  setHasFace: Function,
+  setHasMultipleFaces: Function
 ) {
   const options = { mode: FaceDetector.FaceDetectorMode.fast };
   const { faces } = await FaceDetector.detectFacesAsync(uri, options);
 
-  if (faces.length > 0) {
+  if (faces.length === 0) {
+    setHasFace(false);
+    setImage(null);
+    setHasMultipleFaces(false);
+  } else if (faces.length === 1) {
     const { bounds } = faces[0];
     cropImage(uri, bounds, setImage);
     setHasFace(true);
   } else {
-    setHasFace(false);
     setImage(null);
+    setHasMultipleFaces(true);
+    setHasFace(true);
   }
 }
 

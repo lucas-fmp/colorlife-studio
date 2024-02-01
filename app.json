@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "colorlife-studio",
+    "name": "ColorLife Studio",
     "slug": "colorlife-studio",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -19,7 +21,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.lucasfmp.colorlifestudio"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -32,6 +38,11 @@
           "photosPermission": "O app precisa acessar suas fotos para importar a foto para a análise."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "7a74fc1d-da52-4bc4-a5d1-a50355b49c2b"
+      }
+    }
   }
 }

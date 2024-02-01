@@ -11,12 +11,15 @@ import { StackNavigation } from '../../routes/stack.routes';
 export default function MelhoresCoresSelecionarImagem() {
   const [image, setImage] = useState<null | string>(null);
   const [hasFace, setHasFace] = useState<null | boolean>(null);
+  const [hasMultipleFaces, setHasMultipleFaces] = useState<null | boolean>(
+    null
+  );
 
   const { goBack } = useNavigation();
   const { navigate } = useNavigation<StackNavigation>();
 
   const handlePickImage = async () => {
-    pickImageAndDetectFace(setImage, setHasFace);
+    pickImageAndDetectFace(setImage, setHasFace, setHasMultipleFaces);
   };
 
   useEffect(() => {
@@ -66,7 +69,13 @@ export default function MelhoresCoresSelecionarImagem() {
 
         {hasFace === false && (
           <Text style={[styles.melhoresCoresText, { color: 'red' }]}>
-            Nenhum rosto encontrado! Por favor, tente novamente.
+            Nenhum rosto encontrado! Por favor, escolha outra imagem.
+          </Text>
+        )}
+
+        {hasMultipleFaces === true && (
+          <Text style={[styles.melhoresCoresText, { color: 'red' }]}>
+            Mais de um rosto encontrado! Por favor, escolha outra imagem.
           </Text>
         )}
       </View>
