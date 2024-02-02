@@ -115,7 +115,87 @@ export default function AnaliseVisualizar({ route }: Props) {
             </Text>
           </View>
 
-          <View style={styles.swiperPage} key="3">
+          <View
+            style={[styles.swiperPage, { backgroundColor: colors.black }]}
+            key="3"
+          >
+            <TouchableOpacity
+              style={styles.analiseBackIcon}
+              onPress={() => goBack()}
+            >
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="white"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperTitle, { color: colors.white }]}>
+              PRETO E BRANCO
+            </Text>
+          </View>
+
+          <View
+            style={[styles.swiperPage, { backgroundColor: colors.black }]}
+            key="4"
+          >
+            <TouchableOpacity
+              style={styles.analiseBackIcon}
+              onPress={() => goBack()}
+            >
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="white"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperTitle, { color: colors.white }]}>
+              METAIS
+            </Text>
+          </View>
+
+          <View
+            style={[styles.swiperPage, { backgroundColor: colors.black }]}
+            key="5"
+          >
+            <TouchableOpacity
+              style={styles.analiseBackIcon}
+              onPress={() => goBack()}
+            >
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="white"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperTitle, { color: colors.white }]}>
+              DIMENSÕES
+            </Text>
+          </View>
+
+          <View
+            style={[styles.swiperPage, { backgroundColor: colors.black }]}
+            key="6"
+          >
+            <TouchableOpacity
+              style={styles.analiseBackIcon}
+              onPress={() => goBack()}
+            >
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="white"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperTitle, { color: colors.white }]}>
+              ESTAÇÕES
+            </Text>
+          </View>
+
+          <View style={styles.swiperPage} key="7">
             <TouchableOpacity
               style={styles.analiseBackIcon}
               onPress={() => goBack()}
@@ -150,7 +230,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             <Footer opacity={0.5} />
           </View>
 
-          <View style={styles.swiperPage} key="4">
+          <View style={styles.swiperPage} key="8">
             <TouchableOpacity
               style={styles.analiseBackIcon}
               onPress={() => goBack()}
@@ -187,7 +267,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             <Footer opacity={0.5} />
           </View>
 
-          <View style={styles.swiperPage} key="5">
+          <View style={styles.swiperPage} key="9">
             <TouchableOpacity
               style={styles.analiseBackIcon}
               onPress={() => goBack()}
@@ -222,7 +302,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             <Footer opacity={0.5} />
           </View>
 
-          <View style={styles.swiperPage} key="6">
+          <View style={styles.swiperPage} key="10">
             <TouchableOpacity
               style={styles.analiseBackIcon}
               onPress={() => goBack()}
@@ -259,7 +339,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             <Footer opacity={0.5} />
           </View>
 
-          <View style={styles.swiperPage} key="7">
+          <View style={styles.swiperPage} key="11">
             <TouchableOpacity
               style={styles.analiseBackIcon}
               onPress={() => goBack()}
