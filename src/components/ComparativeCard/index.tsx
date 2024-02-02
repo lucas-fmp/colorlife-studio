@@ -1,7 +1,7 @@
 import { Image, View } from 'react-native';
 import { styles } from './styles';
 import Svg, { Image as SvgImage, ClipPath, Ellipse } from 'react-native-svg';
-import ImagePaths from '../../utils/imagePaths';
+import ImagePaths from '../../utils/comparativeCardsPaths';
 
 type ImagePathsKeys = keyof typeof ImagePaths;
 

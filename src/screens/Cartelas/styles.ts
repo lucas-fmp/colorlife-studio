@@ -41,7 +41,6 @@ export const styles = StyleSheet.create({
   },
 
   cartelasButton: {
-    backgroundColor: colors.black,
     alignSelf: 'center',
     width: '85%',
     alignItems: 'center',
@@ -62,13 +61,11 @@ export const styles = StyleSheet.create({
     color: colors.white,
     fontFamily: fonts.f600semiBold,
     fontSize: 24,
-    padding: 0,
     marginVertical: -10,
   },
 
   cartelasButtonImage: {
-    overflow: 'hidden',
     width: 70,
-    height: 80,
+    height: '100%',
   },
 });

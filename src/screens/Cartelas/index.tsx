@@ -63,7 +63,6 @@ export default function Cartelas() {
                   tintColor: colors.invernoBrilhanteSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -88,7 +87,6 @@ export default function Cartelas() {
                   tintColor: colors.invernoEscuroSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -113,7 +111,6 @@ export default function Cartelas() {
                   tintColor: colors.invernoFrioSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -138,7 +135,6 @@ export default function Cartelas() {
                   tintColor: colors.outonoEscuroSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -163,7 +159,6 @@ export default function Cartelas() {
                   tintColor: colors.outonoQuenteSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -188,7 +183,6 @@ export default function Cartelas() {
                   tintColor: colors.outonoSuaveSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -213,7 +207,6 @@ export default function Cartelas() {
                   tintColor: colors.primaveraBrilhanteSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -238,7 +231,6 @@ export default function Cartelas() {
                   tintColor: colors.primaveraClaraSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -263,7 +255,6 @@ export default function Cartelas() {
                   tintColor: colors.primaveraQuenteSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -288,7 +279,6 @@ export default function Cartelas() {
                   tintColor: colors.veraoClaroSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -310,7 +300,6 @@ export default function Cartelas() {
                   tintColor: colors.veraoFrioSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -335,7 +324,6 @@ export default function Cartelas() {
                   tintColor: colors.veraoSuaveSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>

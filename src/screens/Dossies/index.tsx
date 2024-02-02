@@ -60,7 +60,6 @@ export default function Dossies() {
                   tintColor: colors.invernoBrilhanteSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -84,7 +83,6 @@ export default function Dossies() {
                   tintColor: colors.invernoEscuroSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -108,7 +106,6 @@ export default function Dossies() {
                   tintColor: colors.invernoFrioSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -132,7 +129,6 @@ export default function Dossies() {
                   tintColor: colors.outonoEscuroSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -156,7 +152,6 @@ export default function Dossies() {
                   tintColor: colors.outonoQuenteSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -180,7 +175,6 @@ export default function Dossies() {
                   tintColor: colors.outonoSuaveSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -204,7 +198,6 @@ export default function Dossies() {
                   tintColor: colors.primaveraBrilhanteSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -228,7 +221,6 @@ export default function Dossies() {
                   tintColor: colors.primaveraClaraSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -252,7 +244,6 @@ export default function Dossies() {
                   tintColor: colors.primaveraQuenteSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -273,7 +264,6 @@ export default function Dossies() {
                   tintColor: colors.veraoClaroSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -294,7 +284,6 @@ export default function Dossies() {
                   tintColor: colors.veraoFrioSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
@@ -315,7 +304,6 @@ export default function Dossies() {
                   tintColor: colors.veraoSuaveSecundaria,
                 },
               ]}
-              resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
