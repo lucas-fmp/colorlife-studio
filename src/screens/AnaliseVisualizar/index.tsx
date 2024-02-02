@@ -31,7 +31,7 @@ export default function AnaliseVisualizar({ route }: Props) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setTurnPhone(false);
-    }, 3000);
+    }, 1300);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -64,7 +64,10 @@ export default function AnaliseVisualizar({ route }: Props) {
         style={[styles.swiperContainer, { maxHeight: width, width: height }]}
       >
         <PagerView style={styles.viewPager} initialPage={0}>
-          <View style={styles.swiperPage} key="1">
+          <View
+            style={[styles.swiperPage, { backgroundColor: colors.black }]}
+            key="1"
+          >
             <TouchableOpacity
               style={styles.analiseBackIcon}
               onPress={() => goBack()}
@@ -72,20 +75,47 @@ export default function AnaliseVisualizar({ route }: Props) {
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
-                color="black"
+                color="white"
               />
             </TouchableOpacity>
 
-            <Text style={styles.swiperHeader}>
-              ANÁLISE DE COLORAÇÃO PESSOAL - DIGITAL
+            <Text style={[styles.swiperTitle, { color: colors.white }]}>
+              CONTRASTE
             </Text>
-
-            <Text style={styles.swiperTitle}>SUBTOM DE PELE</Text>
-
-            <Footer opacity={0.5} />
+            <Text
+              style={[
+                styles.swiperTitle,
+                {
+                  color: colors.white,
+                  marginTop: -20,
+                },
+              ]}
+            >
+              PESSOAL
+            </Text>
           </View>
 
-          <View style={styles.swiperPage} key="2">
+          <View
+            style={[styles.swiperPage, { backgroundColor: colors.black }]}
+            key="2"
+          >
+            <TouchableOpacity
+              style={styles.analiseBackIcon}
+              onPress={() => goBack()}
+            >
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="white"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperTitle, { color: colors.white }]}>
+              SUBTOM
+            </Text>
+          </View>
+
+          <View style={styles.swiperPage} key="3">
             <TouchableOpacity
               style={styles.analiseBackIcon}
               onPress={() => goBack()}
@@ -120,7 +150,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             <Footer opacity={0.5} />
           </View>
 
-          <View style={styles.swiperPage} key="3">
+          <View style={styles.swiperPage} key="4">
             <TouchableOpacity
               style={styles.analiseBackIcon}
               onPress={() => goBack()}
@@ -157,7 +187,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             <Footer opacity={0.5} />
           </View>
 
-          <View style={styles.swiperPage} key="4">
+          <View style={styles.swiperPage} key="5">
             <TouchableOpacity
               style={styles.analiseBackIcon}
               onPress={() => goBack()}
@@ -192,7 +222,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             <Footer opacity={0.5} />
           </View>
 
-          <View style={styles.swiperPage} key="5">
+          <View style={styles.swiperPage} key="6">
             <TouchableOpacity
               style={styles.analiseBackIcon}
               onPress={() => goBack()}
@@ -229,7 +259,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             <Footer opacity={0.5} />
           </View>
 
-          <View style={styles.swiperPage} key="6">
+          <View style={styles.swiperPage} key="7">
             <TouchableOpacity
               style={styles.analiseBackIcon}
               onPress={() => goBack()}

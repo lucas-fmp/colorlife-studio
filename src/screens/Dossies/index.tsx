@@ -47,7 +47,22 @@ export default function Dossies() {
           ]}
           onPress={() => Linking.openURL(urlsDossies.invernoBrilhante)}
         >
-          <Text style={styles.dossiesButtonText}>INVERNO BRILHANTE</Text>
+          <View>
+            <Text style={styles.dossiesButtonPrimaryText}>INVERNO</Text>
+            <Text style={styles.dossiesButtonSecondaryText}>BRILHANTE</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.dossiesButtonImage,
+                {
+                  tintColor: colors.invernoBrilhanteSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={[
@@ -56,7 +71,22 @@ export default function Dossies() {
           ]}
           onPress={() => Linking.openURL(urlsDossies.invernoEscuro)}
         >
-          <Text style={styles.dossiesButtonText}>INVERNO ESCURO</Text>
+          <View>
+            <Text style={styles.dossiesButtonPrimaryText}>INVERNO</Text>
+            <Text style={styles.dossiesButtonSecondaryText}>ESCURO</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.dossiesButtonImage,
+                {
+                  tintColor: colors.invernoEscuroSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={[
@@ -65,7 +95,22 @@ export default function Dossies() {
           ]}
           onPress={() => Linking.openURL(urlsDossies.invernoFrio)}
         >
-          <Text style={styles.dossiesButtonText}>INVERNO FRIO</Text>
+          <View>
+            <Text style={styles.dossiesButtonPrimaryText}>INVERNO</Text>
+            <Text style={styles.dossiesButtonSecondaryText}>FRIO</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.dossiesButtonImage,
+                {
+                  tintColor: colors.invernoFrioSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={[
@@ -74,7 +119,22 @@ export default function Dossies() {
           ]}
           onPress={() => Linking.openURL(urlsDossies.outonoEscuro)}
         >
-          <Text style={styles.dossiesButtonText}>OUTONO ESCURO</Text>
+          <View>
+            <Text style={styles.dossiesButtonPrimaryText}>OUTONO</Text>
+            <Text style={styles.dossiesButtonSecondaryText}>ESCURO</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.dossiesButtonImage,
+                {
+                  tintColor: colors.outonoEscuroSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={[
@@ -83,7 +143,22 @@ export default function Dossies() {
           ]}
           onPress={() => Linking.openURL(urlsDossies.outonoQuente)}
         >
-          <Text style={styles.dossiesButtonText}>OUTONO QUENTE</Text>
+          <View>
+            <Text style={styles.dossiesButtonPrimaryText}>OUTONO</Text>
+            <Text style={styles.dossiesButtonSecondaryText}>QUENTE</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.dossiesButtonImage,
+                {
+                  tintColor: colors.outonoQuenteSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={[
@@ -92,7 +167,22 @@ export default function Dossies() {
           ]}
           onPress={() => Linking.openURL(urlsDossies.outonoSuave)}
         >
-          <Text style={styles.dossiesButtonText}>OUTONO SUAVE</Text>
+          <View>
+            <Text style={styles.dossiesButtonPrimaryText}>OUTONO</Text>
+            <Text style={styles.dossiesButtonSecondaryText}>SUAVE</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.dossiesButtonImage,
+                {
+                  tintColor: colors.outonoSuaveSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={[
@@ -101,7 +191,22 @@ export default function Dossies() {
           ]}
           onPress={() => Linking.openURL(urlsDossies.primaveraBrilhante)}
         >
-          <Text style={styles.dossiesButtonText}>PRIMAVERA BRILHANTE</Text>
+          <View>
+            <Text style={styles.dossiesButtonPrimaryText}>PRIMAVERA</Text>
+            <Text style={styles.dossiesButtonSecondaryText}>BRILHANTE</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.dossiesButtonImage,
+                {
+                  tintColor: colors.primaveraBrilhanteSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={[
@@ -110,7 +215,22 @@ export default function Dossies() {
           ]}
           onPress={() => Linking.openURL(urlsDossies.primaveraClara)}
         >
-          <Text style={styles.dossiesButtonText}>PRIMAVERA CLARA</Text>
+          <View>
+            <Text style={styles.dossiesButtonPrimaryText}>PRIMAVERA</Text>
+            <Text style={styles.dossiesButtonSecondaryText}>CLARA</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.dossiesButtonImage,
+                {
+                  tintColor: colors.primaveraClaraSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={[
@@ -119,25 +239,85 @@ export default function Dossies() {
           ]}
           onPress={() => Linking.openURL(urlsDossies.primaveraQuente)}
         >
-          <Text style={styles.dossiesButtonText}>PRIMAVERA QUENTE</Text>
+          <View>
+            <Text style={styles.dossiesButtonPrimaryText}>PRIMAVERA</Text>
+            <Text style={styles.dossiesButtonSecondaryText}>QUENTE</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.dossiesButtonImage,
+                {
+                  tintColor: colors.primaveraQuenteSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.dossiesButton, { backgroundColor: colors.veraoClaro }]}
           onPress={() => Linking.openURL(urlsDossies.veraoClaro)}
         >
-          <Text style={styles.dossiesButtonText}>VERÃO CLARO</Text>
+          <View>
+            <Text style={styles.dossiesButtonPrimaryText}>VERÃO</Text>
+            <Text style={styles.dossiesButtonSecondaryText}>CLARO</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.dossiesButtonImage,
+                {
+                  tintColor: colors.veraoClaroSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.dossiesButton, { backgroundColor: colors.veraoFrio }]}
           onPress={() => Linking.openURL(urlsDossies.veraoFrio)}
         >
-          <Text style={styles.dossiesButtonText}>VERÃO FRIO</Text>
+          <View>
+            <Text style={styles.dossiesButtonPrimaryText}>VERÃO</Text>
+            <Text style={styles.dossiesButtonSecondaryText}>FRIO</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.dossiesButtonImage,
+                {
+                  tintColor: colors.veraoFrioSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.dossiesButton, { backgroundColor: colors.veraoSuave }]}
           onPress={() => Linking.openURL(urlsDossies.veraoSuave)}
         >
-          <Text style={styles.dossiesButtonText}>VERÃO SUAVE</Text>
+          <View>
+            <Text style={styles.dossiesButtonPrimaryText}>VERÃO</Text>
+            <Text style={styles.dossiesButtonSecondaryText}>SUAVE</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.dossiesButtonImage,
+                {
+                  tintColor: colors.veraoSuaveSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
       </ScrollView>
 

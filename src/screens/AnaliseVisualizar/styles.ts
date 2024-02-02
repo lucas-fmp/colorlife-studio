@@ -67,8 +67,9 @@ export const styles = StyleSheet.create({
   },
 
   swiperTitle: {
-    fontFamily: fonts.f500medium,
-    fontSize: 40,
+    fontFamily: fonts.f200extralight,
+    fontSize: 50,
+    letterSpacing: 10,
   },
 
   comparativeCardsContainer: {

@@ -37,19 +37,38 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: 'center',
     paddingBottom: 12,
+    letterSpacing: -1,
   },
 
   dossiesButton: {
     backgroundColor: colors.black,
     alignSelf: 'center',
-    alignItems: 'center',
     width: '85%',
-    paddingVertical: 8,
-    marginBottom: 4,
+    alignItems: 'center',
+    paddingLeft: 20,
+    marginBottom: 10,
+    height: 80,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 
-  dossiesButtonText: {
+  dossiesButtonPrimaryText: {
     color: colors.white,
     fontFamily: fonts.f400regular,
+    fontSize: 14,
+  },
+
+  dossiesButtonSecondaryText: {
+    color: colors.white,
+    fontFamily: fonts.f600semiBold,
+    fontSize: 24,
+    padding: 0,
+    marginVertical: -10,
+  },
+
+  dossiesButtonImage: {
+    overflow: 'hidden',
+    width: 70,
+    height: 80,
   },
 });

@@ -43,7 +43,7 @@ export default function MelhoresCoresVisualizar({ route }: Props) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setTurnPhone(false);
-    }, 3000);
+    }, 1300);
 
     return () => clearTimeout(timeout);
   }, []);

@@ -50,8 +50,24 @@ export default function Cartelas() {
           ]}
           onPress={() => Linking.openURL(urlsCartelas.invernoBrilhante)}
         >
-          <Text style={styles.cartelasButtonText}>INVERNO BRILHANTE</Text>
+          <View>
+            <Text style={styles.cartelasButtonPrimaryText}>INVERNO</Text>
+            <Text style={styles.cartelasButtonSecondaryText}>BRILHANTE</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.cartelasButtonImage,
+                {
+                  tintColor: colors.invernoBrilhanteSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={[
             styles.cartelasButton,
@@ -59,8 +75,24 @@ export default function Cartelas() {
           ]}
           onPress={() => Linking.openURL(urlsCartelas.invernoEscuro)}
         >
-          <Text style={styles.cartelasButtonText}>INVERNO ESCURO</Text>
+          <View>
+            <Text style={styles.cartelasButtonPrimaryText}>INVERNO</Text>
+            <Text style={styles.cartelasButtonSecondaryText}>ESCURO</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.cartelasButtonImage,
+                {
+                  tintColor: colors.invernoEscuroSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={[
             styles.cartelasButton,
@@ -68,8 +100,24 @@ export default function Cartelas() {
           ]}
           onPress={() => Linking.openURL(urlsCartelas.invernoFrio)}
         >
-          <Text style={styles.cartelasButtonText}>INVERNO FRIO</Text>
+          <View>
+            <Text style={styles.cartelasButtonPrimaryText}>INVERNO</Text>
+            <Text style={styles.cartelasButtonSecondaryText}>FRIO</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.cartelasButtonImage,
+                {
+                  tintColor: colors.invernoFrioSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={[
             styles.cartelasButton,
@@ -77,8 +125,24 @@ export default function Cartelas() {
           ]}
           onPress={() => Linking.openURL(urlsCartelas.outonoEscuro)}
         >
-          <Text style={styles.cartelasButtonText}>OUTONO ESCURO</Text>
+          <View>
+            <Text style={styles.cartelasButtonPrimaryText}>OUTONO</Text>
+            <Text style={styles.cartelasButtonSecondaryText}>ESCURO</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.cartelasButtonImage,
+                {
+                  tintColor: colors.outonoEscuroSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={[
             styles.cartelasButton,
@@ -86,8 +150,24 @@ export default function Cartelas() {
           ]}
           onPress={() => Linking.openURL(urlsCartelas.outonoQuente)}
         >
-          <Text style={styles.cartelasButtonText}>OUTONO QUENTE</Text>
+          <View>
+            <Text style={styles.cartelasButtonPrimaryText}>OUTONO</Text>
+            <Text style={styles.cartelasButtonSecondaryText}>QUENTE</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.cartelasButtonImage,
+                {
+                  tintColor: colors.outonoQuenteSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={[
             styles.cartelasButton,
@@ -95,8 +175,24 @@ export default function Cartelas() {
           ]}
           onPress={() => Linking.openURL(urlsCartelas.outonoSuave)}
         >
-          <Text style={styles.cartelasButtonText}>OUTONO SUAVE</Text>
+          <View>
+            <Text style={styles.cartelasButtonPrimaryText}>OUTONO</Text>
+            <Text style={styles.cartelasButtonSecondaryText}>SUAVE</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.cartelasButtonImage,
+                {
+                  tintColor: colors.outonoSuaveSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={[
             styles.cartelasButton,
@@ -104,8 +200,24 @@ export default function Cartelas() {
           ]}
           onPress={() => Linking.openURL(urlsCartelas.primaveraBrilhante)}
         >
-          <Text style={styles.cartelasButtonText}>PRIMAVERA BRILHANTE</Text>
+          <View>
+            <Text style={styles.cartelasButtonPrimaryText}>PRIMAVERA</Text>
+            <Text style={styles.cartelasButtonSecondaryText}>BRILHANTE</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.cartelasButtonImage,
+                {
+                  tintColor: colors.primaveraBrilhanteSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={[
             styles.cartelasButton,
@@ -113,8 +225,24 @@ export default function Cartelas() {
           ]}
           onPress={() => Linking.openURL(urlsCartelas.primaveraClara)}
         >
-          <Text style={styles.cartelasButtonText}>PRIMAVERA CLARA</Text>
+          <View>
+            <Text style={styles.cartelasButtonPrimaryText}>PRIMAVERA</Text>
+            <Text style={styles.cartelasButtonSecondaryText}>CLARA</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.cartelasButtonImage,
+                {
+                  tintColor: colors.primaveraClaraSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={[
             styles.cartelasButton,
@@ -122,8 +250,24 @@ export default function Cartelas() {
           ]}
           onPress={() => Linking.openURL(urlsCartelas.primaveraQuente)}
         >
-          <Text style={styles.cartelasButtonText}>PRIMAVERA QUENTE</Text>
+          <View>
+            <Text style={styles.cartelasButtonPrimaryText}>PRIMAVERA</Text>
+            <Text style={styles.cartelasButtonSecondaryText}>QUENTE</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.cartelasButtonImage,
+                {
+                  tintColor: colors.primaveraQuenteSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={[
             styles.cartelasButton,
@@ -131,14 +275,46 @@ export default function Cartelas() {
           ]}
           onPress={() => Linking.openURL(urlsCartelas.veraoClaro)}
         >
-          <Text style={styles.cartelasButtonText}>VERÃO CLARO</Text>
+          <View>
+            <Text style={styles.cartelasButtonPrimaryText}>VERÃO</Text>
+            <Text style={styles.cartelasButtonSecondaryText}>CLARO</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.cartelasButtonImage,
+                {
+                  tintColor: colors.veraoClaroSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={[styles.cartelasButton, { backgroundColor: colors.veraoFrio }]}
           onPress={() => Linking.openURL(urlsCartelas.veraoFrio)}
         >
-          <Text style={styles.cartelasButtonText}>VERÃO FRIO</Text>
+          <View>
+            <Text style={styles.cartelasButtonPrimaryText}>VERÃO</Text>
+            <Text style={styles.cartelasButtonSecondaryText}>FRIO</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.cartelasButtonImage,
+                {
+                  tintColor: colors.veraoFrioSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={[
             styles.cartelasButton,
@@ -146,7 +322,22 @@ export default function Cartelas() {
           ]}
           onPress={() => Linking.openURL(urlsCartelas.veraoSuave)}
         >
-          <Text style={styles.cartelasButtonText}>VERÃO SUAVE</Text>
+          <View>
+            <Text style={styles.cartelasButtonPrimaryText}>VERÃO</Text>
+            <Text style={styles.cartelasButtonSecondaryText}>SUAVE</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../assets/logo-botao.svg')}
+              style={[
+                styles.cartelasButtonImage,
+                {
+                  tintColor: colors.veraoSuaveSecundaria,
+                },
+              ]}
+              resizeMode="contain"
+            />
+          </View>
         </TouchableOpacity>
       </ScrollView>
 

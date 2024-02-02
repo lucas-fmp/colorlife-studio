@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     width: '70%',
     paddingVertical: 16,
-    marginBottom: 20,
+    marginBottom: 15,
   },
 
   homeButtonText: {

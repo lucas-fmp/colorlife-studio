@@ -33,6 +33,7 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: 'center',
     paddingBottom: 12,
+    letterSpacing: -1,
   },
 
   analiseContentContainer: {

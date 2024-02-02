@@ -45,18 +45,25 @@ export default function Home() {
         >
           <Text style={styles.homeButtonText}>MELHORES CORES</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity style={styles.homeButton} onPress={() => {}}>
+          <Text style={styles.homeButtonText}>FICHA DE DIAGNÓSTICO</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity
           style={styles.homeButton}
           onPress={() => navigate('Cartelas')}
         >
           <Text style={styles.homeButtonText}>CARTELAS DE CORES</Text>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={styles.homeButton}
           onPress={() => navigate('Dossies')}
         >
           <Text style={styles.homeButtonText}>DOSSIÊS COMPLETOS</Text>
         </TouchableOpacity>
+
         <TouchableOpacity style={styles.homeButton} onPress={() => {}}>
           <Text style={styles.homeButtonText}>SOBRE</Text>
         </TouchableOpacity>
