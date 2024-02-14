@@ -3,17 +3,12 @@ import { styles } from "./styles";
 import Footer from "../../components/Footer";
 import colors from "../../styles/colors";
 import { MaterialIcons } from "@expo/vector-icons";
-import { RouteProp, useNavigation } from "@react-navigation/native";
-import { RootStackParamList, StackNavigation } from "../../routes/stack.routes";
-import { getAnalises } from "../../utils/manipulateImg";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigation } from "../../routes/stack.routes";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-type Props = {
-  route: RouteProp<RootStackParamList, "AnaliseArquivoPronto">;
-};
-
-export default function AnaliseArquivoPronto({ route }: Props) {
-  const { uri } = route.params;
-
+export default function AnaliseSelecao() {
+  const { goBack } = useNavigation();
   const { navigate } = useNavigation<StackNavigation>();
 
   return (
@@ -24,10 +19,7 @@ export default function AnaliseArquivoPronto({ route }: Props) {
         backgroundColor={colors.white}
       />
 
-      <TouchableOpacity
-        style={styles.analiseBackIcon}
-        onPress={() => navigate("AnaliseSelecao")}
-      >
+      <TouchableOpacity style={styles.analiseBackIcon} onPress={() => goBack()}>
         <MaterialIcons name="arrow-back-ios-new" size={24} color="black" />
       </TouchableOpacity>
 
@@ -39,24 +31,28 @@ export default function AnaliseArquivoPronto({ route }: Props) {
         />
       </View>
 
-      <Text style={styles.analiseTitle}>Seu arquivo ficou pronto!</Text>
+      <Text style={styles.analiseTitle}>ANÁLISE DIGITAL</Text>
 
       <View style={styles.analiseContentContainer}>
         <Text style={styles.analiseText}>
-          Você poderá também acessar esta e outras análises já feitas no
-          Histórico de Análises.
+          Você pode gerar uma nova análise ou acessar outras análises já feitas
+          no Histórico de Análises.
         </Text>
 
         <TouchableOpacity
           style={styles.analiseButton}
-          onPress={() => navigate("AnaliseVisualizar", { uri })}
+          onPress={() => {
+            navigate("AnaliseSelecionarImagem");
+          }}
         >
-          <Text style={styles.analiseButtonText}>VISUALIZAR ANÁLISE</Text>
+          <Text style={styles.analiseButtonText}>NOVA ANÁLISE</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.analiseButton}
-          onPress={() => navigate("AnaliseHistorico")}
+          onPress={() => {
+            navigate("AnaliseHistorico");
+          }}
         >
           <Text style={styles.analiseButtonText}>HISTÓRICO DE ANÁLISES</Text>
         </TouchableOpacity>

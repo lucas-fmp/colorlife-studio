@@ -8,6 +8,12 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
 
+  analiseScrollView: {
+    justifyContent: "space-between",
+    marginBottom: 40,
+    flexGrow: 1,
+  },
+
   analiseBackIcon: {
     position: "absolute",
     left: 20,
@@ -30,32 +36,44 @@ export const styles = StyleSheet.create({
   analiseTitle: {
     color: colors.black,
     fontFamily: fonts.f600semiBold,
-    fontSize: 20,
+    fontSize: 24,
     textAlign: "center",
     paddingBottom: 12,
+    letterSpacing: -1,
   },
 
   analiseContentContainer: {
     gap: 10,
     alignItems: "center",
+    display: "flex",
+    flexGrow: 1,
+    flex: 1,
   },
 
   analiseText: {
     color: colors.black,
     fontFamily: fonts.f400regular,
     fontSize: 14,
-    textAlign: "justify",
-    width: "80%",
-    marginBottom: 20,
+    textAlign: "center",
+    paddingBottom: 12,
+    width: "85%",
+  },
+
+  analiseTextInput: {
+    width: "70%",
+    borderWidth: 0.5,
+    paddingVertical: 8,
+    marginBottom: 10,
+    paddingHorizontal: 12,
   },
 
   analiseButton: {
-    backgroundColor: colors.black,
     alignSelf: "center",
     alignItems: "center",
     width: "70%",
     paddingVertical: 16,
-    marginBottom: 20,
+    marginBottom: 16,
+    backgroundColor: colors.black,
   },
 
   analiseButtonText: {

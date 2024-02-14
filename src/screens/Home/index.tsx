@@ -5,12 +5,12 @@ import {
   TouchableOpacity,
   StatusBar,
   ScrollView,
-} from 'react-native';
-import { styles } from './styles';
-import Footer from '../../components/Footer';
-import colors from '../../styles/colors';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigation } from '../../routes/stack.routes';
+} from "react-native";
+import { styles } from "./styles";
+import Footer from "../../components/Footer";
+import colors from "../../styles/colors";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigation } from "../../routes/stack.routes";
 
 export default function Home() {
   const { navigate } = useNavigation<StackNavigation>();
@@ -25,7 +25,7 @@ export default function Home() {
 
       <View style={styles.homeLogoContainer}>
         <Image
-          source={require('../../assets/full-logo.png')}
+          source={require("../../assets/full-logo.png")}
           style={styles.homeLogo}
           resizeMode="contain"
         />
@@ -34,14 +34,14 @@ export default function Home() {
       <ScrollView style={styles.homeButtonsContainer}>
         <TouchableOpacity
           style={styles.homeButton}
-          onPress={() => navigate('AnaliseSelecionarImagem')}
+          onPress={() => navigate("AnaliseSelecao")}
         >
           <Text style={styles.homeButtonText}>ANÁLISE DIGITAL</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.homeButton}
-          onPress={() => navigate('MelhoresCoresSelecionarImagem')}
+          onPress={() => navigate("MelhoresCoresSelecionarImagem")}
         >
           <Text style={styles.homeButtonText}>MELHORES CORES</Text>
         </TouchableOpacity>
@@ -52,14 +52,14 @@ export default function Home() {
 
         <TouchableOpacity
           style={styles.homeButton}
-          onPress={() => navigate('Cartelas')}
+          onPress={() => navigate("Cartelas")}
         >
           <Text style={styles.homeButtonText}>CARTELAS DE CORES</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.homeButton}
-          onPress={() => navigate('Dossies')}
+          onPress={() => navigate("Dossies")}
         >
           <Text style={styles.homeButtonText}>DOSSIÊS COMPLETOS</Text>
         </TouchableOpacity>

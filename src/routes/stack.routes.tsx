@@ -1,16 +1,18 @@
-import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer, NavigationProp } from '@react-navigation/native';
-import Splash from '../lotties/Splash';
-import Home from '../screens/Home';
-import Dossies from '../screens/Dossies';
-import Cartelas from '../screens/Cartelas';
-import AnaliseSelecionarImagem from '../screens/AnaliseSelecionarImagem';
-import AnaliseArquivoPronto from '../screens/AnaliseArquivoPronto';
-import AnaliseVisualizar from '../screens/AnaliseVisualizar';
-import MelhoresCoresSelecionarImagem from '../screens/MelhoresCoresSelecionarImagem';
-import MelhoresCoresArquivoPronto from '../screens/MelhoresCoresArquivoPronto';
-import MelhoresCoresVisualizar from '../screens/MelhoresCoresVisualizar';
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer, NavigationProp } from "@react-navigation/native";
+import Splash from "../lotties/Splash";
+import Home from "../screens/Home";
+import Dossies from "../screens/Dossies";
+import Cartelas from "../screens/Cartelas";
+import AnaliseSelecionarImagem from "../screens/AnaliseSelecionarImagem";
+import AnaliseArquivoPronto from "../screens/AnaliseArquivoPronto";
+import AnaliseVisualizar from "../screens/AnaliseVisualizar";
+import MelhoresCoresSelecionarImagem from "../screens/MelhoresCoresSelecionarImagem";
+import MelhoresCoresArquivoPronto from "../screens/MelhoresCoresArquivoPronto";
+import MelhoresCoresVisualizar from "../screens/MelhoresCoresVisualizar";
+import AnaliseSelecao from "../screens/AnaliseSelecao";
+import AnaliseHistorico from "../screens/AnaliseHistorico";
 
 type DynamicParamValue = string;
 
@@ -21,6 +23,8 @@ type DynamicRouteParams = {
 export type RootStackParamList = {
   Splash: undefined;
   Home: undefined;
+  AnaliseSelecao: undefined;
+  AnaliseHistorico: undefined;
   AnaliseSelecionarImagem: undefined;
   AnaliseArquivoPronto: DynamicRouteParams;
   AnaliseVisualizar: DynamicRouteParams;
@@ -41,6 +45,8 @@ function StackNavigator() {
       <Stack.Screen name="Splash" component={Splash} />
 
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="AnaliseSelecao" component={AnaliseSelecao} />
+      <Stack.Screen name="AnaliseHistorico" component={AnaliseHistorico} />
       <Stack.Screen
         name="AnaliseSelecionarImagem"
         component={AnaliseSelecionarImagem}

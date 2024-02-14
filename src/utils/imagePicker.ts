@@ -1,6 +1,6 @@
-import * as ImagePicker from 'expo-image-picker';
-import * as FaceDetector from 'expo-face-detector';
-import { manipulateAsync, SaveFormat } from 'expo-image-manipulator';
+import * as ImagePicker from "expo-image-picker";
+import * as FaceDetector from "expo-face-detector";
+import { manipulateAsync, SaveFormat } from "expo-image-manipulator";
 
 interface FaceBounds {
   origin: {
@@ -46,6 +46,7 @@ async function detectFace(
     const { bounds } = faces[0];
     cropImage(uri, bounds, setImage);
     setHasFace(true);
+    setHasMultipleFaces(false);
   } else {
     setImage(null);
     setHasMultipleFaces(true);

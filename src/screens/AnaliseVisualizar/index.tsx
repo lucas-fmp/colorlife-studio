@@ -5,28 +5,28 @@ import {
   Text,
   useWindowDimensions,
   TouchableOpacity,
-} from 'react-native';
-import { styles } from './styles';
-import { RouteProp, useNavigation } from '@react-navigation/native';
-import { RootStackParamList } from '../../routes/stack.routes';
-import { useEffect, useState } from 'react';
-import { MaterialIcons } from '@expo/vector-icons';
-import fonts from '../../styles/fonts';
-import colors from '../../styles/colors';
-import PagerView from 'react-native-pager-view';
-import Footer from '../../components/Footer';
-import ComparativeCard from '../../components/ComparativeCard';
+} from "react-native";
+import { styles } from "./styles";
+import { RouteProp, useNavigation } from "@react-navigation/native";
+import { RootStackParamList, StackNavigation } from "../../routes/stack.routes";
+import { useEffect, useState } from "react";
+import { MaterialIcons } from "@expo/vector-icons";
+import fonts from "../../styles/fonts";
+import colors from "../../styles/colors";
+import PagerView from "react-native-pager-view";
+import Footer from "../../components/Footer";
+import ComparativeCard from "../../components/ComparativeCard";
 
 type Props = {
-  route: RouteProp<RootStackParamList, 'AnaliseVisualizar'>;
+  route: RouteProp<RootStackParamList, "AnaliseVisualizar">;
 };
 
 export default function AnaliseVisualizar({ route }: Props) {
   const { height, width } = useWindowDimensions();
-  const { uri } = route.params;
+  const { uri, name } = route.params;
 
   const [turnPhone, setTurnPhone] = useState(true);
-  const { goBack } = useNavigation();
+  const { navigate } = useNavigation<StackNavigation>();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -41,13 +41,13 @@ export default function AnaliseVisualizar({ route }: Props) {
       <View style={styles.turnPhoneContainer}>
         <StatusBar hidden={true} />
         <Text style={styles.turnPhoneText}>
-          Vire o celular para a{' '}
+          Vire o celular para a{" "}
           <Text style={{ fontFamily: fonts.f700bold }}>esquerda</Text> para
           melhor experiência.
         </Text>
         <View style={styles.turnPhoneImageContainer}>
           <Image
-            source={require('../../assets/turn-phone.png')}
+            source={require("../../assets/turn-phone.png")}
             style={styles.turnPhoneImage}
             resizeMode="contain"
           />
@@ -70,7 +70,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           >
             <TouchableOpacity
               style={styles.analiseBackIcon}
-              onPress={() => goBack()}
+              onPress={() => navigate("AnaliseSelecao")}
             >
               <MaterialIcons
                 name="arrow-back-ios-new"
@@ -101,7 +101,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           >
             <TouchableOpacity
               style={styles.analiseBackIcon}
-              onPress={() => goBack()}
+              onPress={() => navigate("AnaliseSelecao")}
             >
               <MaterialIcons
                 name="arrow-back-ios-new"
@@ -121,7 +121,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           >
             <TouchableOpacity
               style={styles.analiseBackIcon}
-              onPress={() => goBack()}
+              onPress={() => navigate("AnaliseSelecao")}
             >
               <MaterialIcons
                 name="arrow-back-ios-new"
@@ -141,7 +141,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           >
             <TouchableOpacity
               style={styles.analiseBackIcon}
-              onPress={() => goBack()}
+              onPress={() => navigate("AnaliseSelecao")}
             >
               <MaterialIcons
                 name="arrow-back-ios-new"
@@ -161,7 +161,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           >
             <TouchableOpacity
               style={styles.analiseBackIcon}
-              onPress={() => goBack()}
+              onPress={() => navigate("AnaliseSelecao")}
             >
               <MaterialIcons
                 name="arrow-back-ios-new"
@@ -181,7 +181,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           >
             <TouchableOpacity
               style={styles.analiseBackIcon}
-              onPress={() => goBack()}
+              onPress={() => navigate("AnaliseSelecao")}
             >
               <MaterialIcons
                 name="arrow-back-ios-new"
@@ -198,7 +198,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           <View style={styles.swiperPage} key="7">
             <TouchableOpacity
               style={styles.analiseBackIcon}
-              onPress={() => goBack()}
+              onPress={() => navigate("AnaliseSelecao")}
             >
               <MaterialIcons
                 name="arrow-back-ios-new"
@@ -233,7 +233,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           <View style={styles.swiperPage} key="8">
             <TouchableOpacity
               style={styles.analiseBackIcon}
-              onPress={() => goBack()}
+              onPress={() => navigate("AnaliseSelecao")}
             >
               <MaterialIcons
                 name="arrow-back-ios-new"
@@ -270,7 +270,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           <View style={styles.swiperPage} key="9">
             <TouchableOpacity
               style={styles.analiseBackIcon}
-              onPress={() => goBack()}
+              onPress={() => navigate("AnaliseSelecao")}
             >
               <MaterialIcons
                 name="arrow-back-ios-new"
@@ -305,7 +305,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           <View style={styles.swiperPage} key="10">
             <TouchableOpacity
               style={styles.analiseBackIcon}
-              onPress={() => goBack()}
+              onPress={() => navigate("AnaliseSelecao")}
             >
               <MaterialIcons
                 name="arrow-back-ios-new"
@@ -342,7 +342,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           <View style={styles.swiperPage} key="11">
             <TouchableOpacity
               style={styles.analiseBackIcon}
-              onPress={() => goBack()}
+              onPress={() => navigate("AnaliseSelecao")}
             >
               <MaterialIcons
                 name="arrow-back-ios-new"

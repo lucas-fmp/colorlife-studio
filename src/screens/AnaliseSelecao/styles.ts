@@ -30,9 +30,10 @@ export const styles = StyleSheet.create({
   analiseTitle: {
     color: colors.black,
     fontFamily: fonts.f600semiBold,
-    fontSize: 20,
+    fontSize: 24,
     textAlign: "center",
     paddingBottom: 12,
+    letterSpacing: -1,
   },
 
   analiseContentContainer: {
