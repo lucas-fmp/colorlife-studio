@@ -11,7 +11,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
-    "expo": "~50.0.4",
+    "expo": "~50.0.6",
     "expo-face-detector": "~12.6.1",
     "expo-font": "~11.10.2",
     "expo-image-manipulator": "~11.8.0",
