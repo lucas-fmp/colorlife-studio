@@ -67,6 +67,12 @@ export default function Historico() {
     );
   };
 
+  const emptyItem = () => (
+    <View style={styles.emptyContainer}>
+      <Text style={styles.emptyText}>Nenhuma análise encontrada.</Text>
+    </View>
+  );
+
   useEffect(() => {
     getAnalises()
       .then((storageAnalises) => {
@@ -108,6 +114,7 @@ export default function Historico() {
             data={analises?.reverse()}
             renderItem={itemHistorico}
             style={{ width: "100%" }}
+            ListEmptyComponent={emptyItem}
           />
         </View>
       </View>

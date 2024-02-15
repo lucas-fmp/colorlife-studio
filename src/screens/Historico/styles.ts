@@ -87,4 +87,13 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "red",
   },
+
+  emptyContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  emptyText: {
+    fontFamily: fonts.f400regular,
+  },
 });
