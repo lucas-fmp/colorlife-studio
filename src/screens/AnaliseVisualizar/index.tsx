@@ -26,7 +26,7 @@ export default function AnaliseVisualizar({ route }: Props) {
   const { uri, name } = route.params;
 
   const [turnPhone, setTurnPhone] = useState(true);
-  const { navigate } = useNavigation<StackNavigation>();
+  const { goBack } = useNavigation();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -68,10 +68,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             style={[styles.swiperPage, { backgroundColor: colors.black }]}
             key="1"
           >
-            <TouchableOpacity
-              style={styles.analiseBackIcon}
-              onPress={() => navigate("AnaliseSelecao")}
-            >
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
@@ -99,10 +96,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             style={[styles.swiperPage, { backgroundColor: colors.black }]}
             key="2"
           >
-            <TouchableOpacity
-              style={styles.analiseBackIcon}
-              onPress={() => navigate("AnaliseSelecao")}
-            >
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
@@ -119,10 +113,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             style={[styles.swiperPage, { backgroundColor: colors.black }]}
             key="3"
           >
-            <TouchableOpacity
-              style={styles.analiseBackIcon}
-              onPress={() => navigate("AnaliseSelecao")}
-            >
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
@@ -139,10 +130,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             style={[styles.swiperPage, { backgroundColor: colors.black }]}
             key="4"
           >
-            <TouchableOpacity
-              style={styles.analiseBackIcon}
-              onPress={() => navigate("AnaliseSelecao")}
-            >
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
@@ -159,10 +147,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             style={[styles.swiperPage, { backgroundColor: colors.black }]}
             key="5"
           >
-            <TouchableOpacity
-              style={styles.analiseBackIcon}
-              onPress={() => navigate("AnaliseSelecao")}
-            >
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
@@ -179,10 +164,7 @@ export default function AnaliseVisualizar({ route }: Props) {
             style={[styles.swiperPage, { backgroundColor: colors.black }]}
             key="6"
           >
-            <TouchableOpacity
-              style={styles.analiseBackIcon}
-              onPress={() => navigate("AnaliseSelecao")}
-            >
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
@@ -196,10 +178,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           </View>
 
           <View style={styles.swiperPage} key="7">
-            <TouchableOpacity
-              style={styles.analiseBackIcon}
-              onPress={() => navigate("AnaliseSelecao")}
-            >
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
@@ -231,10 +210,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           </View>
 
           <View style={styles.swiperPage} key="8">
-            <TouchableOpacity
-              style={styles.analiseBackIcon}
-              onPress={() => navigate("AnaliseSelecao")}
-            >
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
@@ -268,10 +244,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           </View>
 
           <View style={styles.swiperPage} key="9">
-            <TouchableOpacity
-              style={styles.analiseBackIcon}
-              onPress={() => navigate("AnaliseSelecao")}
-            >
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
@@ -303,10 +276,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           </View>
 
           <View style={styles.swiperPage} key="10">
-            <TouchableOpacity
-              style={styles.analiseBackIcon}
-              onPress={() => navigate("AnaliseSelecao")}
-            >
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
@@ -340,10 +310,7 @@ export default function AnaliseVisualizar({ route }: Props) {
           </View>
 
           <View style={styles.swiperPage} key="11">
-            <TouchableOpacity
-              style={styles.analiseBackIcon}
-              onPress={() => navigate("AnaliseSelecao")}
-            >
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}

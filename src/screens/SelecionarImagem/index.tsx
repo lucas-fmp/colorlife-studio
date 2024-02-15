@@ -17,7 +17,7 @@ import { pickImageAndDetectFace } from "../../utils/imagePicker";
 import { StackNavigation } from "../../routes/stack.routes";
 import { saveAnalises } from "../../utils/manipulateImg";
 
-export default function AnaliseSelecionarImagem() {
+export default function SelecionarImagem() {
   const [image, setImage] = useState<null | string>(null);
   const [hasFace, setHasFace] = useState<null | boolean>(null);
   const [hasMultipleFaces, setHasMultipleFaces] = useState<null | boolean>(
@@ -36,64 +36,72 @@ export default function AnaliseSelecionarImagem() {
     if (image && clientName !== "") {
       const fileUri = await saveAnalises(image, clientName);
 
-      navigate("AnaliseArquivoPronto", { uri: fileUri, name: clientName });
+      setImage(null);
+      setClientName("");
+
+      navigate("ArquivoPronto", { uri: fileUri, name: clientName });
     }
   };
 
   return (
-    <View style={styles.analiseContainer}>
+    <View style={styles.container}>
       <StatusBar
         barStyle="dark-content"
         translucent={false}
         backgroundColor={colors.white}
       />
 
-      <TouchableOpacity style={styles.analiseBackIcon} onPress={() => goBack()}>
+      <TouchableOpacity
+        style={styles.backIcon}
+        onPress={() => {
+          goBack();
+          setImage(null);
+          setClientName("");
+        }}
+      >
         <MaterialIcons name="arrow-back-ios-new" size={24} color="black" />
       </TouchableOpacity>
 
-      <View style={styles.analiseLogoContainer}>
+      <View style={styles.logoContainer}>
         <Image
           source={require("../../assets/full-logo.png")}
-          style={styles.analiseLogo}
+          style={styles.logo}
           resizeMode="contain"
         />
       </View>
 
-      <ScrollView contentContainerStyle={styles.analiseScrollView}>
+      <ScrollView contentContainerStyle={styles.scrollView}>
         <View style={{ flexGrow: 1 }}>
-          <Text style={styles.analiseTitle}>ANÁLISE DIGITAL</Text>
+          <Text style={styles.title}>DADOS CLIENTE</Text>
 
-          <View style={styles.analiseContentContainer}>
-            <Text style={styles.analiseText}>
-              Para fazer a análise digital, digite o nome e selecione a imagem
-              da cliente.
+          <View style={styles.contentContainer}>
+            <Text style={styles.text}>
+              Para gerar a análise digital, melhores cores ou a ficha de
+              diagnóstico, primeiro digite o nome e selecione a imagem da
+              cliente.
             </Text>
 
             <TextInput
               value={clientName}
               onChange={(e) => setClientName(e.nativeEvent.text)}
-              style={styles.analiseTextInput}
+              style={styles.textInput}
               placeholder="Nome da Cliente"
               selectionColor={colors.black}
               autoCapitalize="words"
             />
 
-            <TouchableOpacity
-              style={styles.analiseButton}
-              onPress={handlePickImage}
-            >
-              <Text style={styles.analiseButtonText}>SELECIONAR IMAGEM</Text>
+            <TouchableOpacity style={styles.button} onPress={handlePickImage}>
+              <Text style={styles.buttonText}>SELECIONAR IMAGEM</Text>
             </TouchableOpacity>
 
             {hasFace === false && (
-              <Text style={[styles.analiseText, { color: "red" }]}>
+              <Text style={[styles.text, { color: "red" }]}>
                 Nenhum rosto encontrado! Por favor, escolha outra imagem.
               </Text>
             )}
 
             {hasMultipleFaces === true && (
-              <Text style={[styles.analiseText, { color: "red" }]}>
+              <Text style={[styles.text, { color: "red" }]}>
                 Mais de um rosto encontrado! Por favor, escolha outra imagem.
               </Text>
             )}
@@ -114,7 +122,7 @@ export default function AnaliseSelecionarImagem() {
 
         <TouchableOpacity
           style={[
-            styles.analiseButton,
+            styles.button,
             {
               backgroundColor:
                 clientName === "" || !image ? colors.gray : colors.black,
@@ -127,7 +135,7 @@ export default function AnaliseSelecionarImagem() {
           }}
           disabled={clientName === "" || !image}
         >
-          <Text style={styles.analiseButtonText}>GERAR ANÁLISE</Text>
+          <Text style={styles.buttonText}>GERAR ARQUIVOS</Text>
         </TouchableOpacity>
       </ScrollView>
 

@@ -1,6 +1,11 @@
 import * as FileSystem from "expo-file-system";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+interface Analise {
+  name: string;
+  uri: string;
+}
+
 export async function saveAnalises(temporaryUri: string, name: string) {
   const timestamp = new Date().getTime();
   const fileUri =
@@ -15,7 +20,7 @@ export async function saveAnalises(temporaryUri: string, name: string) {
     to: fileUri,
   });
 
-  let analises: { name: string; uri: string }[] = [];
+  let analises: Analise[] = [];
   try {
     const jsonValue = await AsyncStorage.getItem("analises");
     if (jsonValue !== null) {
@@ -25,7 +30,7 @@ export async function saveAnalises(temporaryUri: string, name: string) {
     console.error("Erro ao obter dados de analises do AsyncStorage:", e);
   }
 
-  const novoObjeto = { name, uri: fileUri };
+  const novoObjeto: Analise = { name, uri: fileUri };
   analises.push(novoObjeto);
 
   try {
@@ -38,8 +43,8 @@ export async function saveAnalises(temporaryUri: string, name: string) {
   return fileUri;
 }
 
-export async function getAnalises(): Promise<{ name: string; uri: string }[]> {
-  let analises: { name: string; uri: string }[] = [];
+export async function getAnalises(): Promise<Analise[]> {
+  let analises: Analise[] = [];
 
   try {
     const jsonValue = await AsyncStorage.getItem("analises");
@@ -51,4 +56,26 @@ export async function getAnalises(): Promise<{ name: string; uri: string }[]> {
   }
 
   return analises;
+}
+
+export async function deleteAnaliseByUri(uri: string): Promise<void> {
+  try {
+    let analises: Analise[] = [];
+    const jsonValue = await AsyncStorage.getItem("analises");
+    if (jsonValue !== null) {
+      analises = JSON.parse(jsonValue);
+      const updatedAnalises = analises.filter((analise) => analise.uri !== uri);
+      await AsyncStorage.setItem("analises", JSON.stringify(updatedAnalises));
+    }
+  } catch (e) {
+    console.error("Erro ao excluir a análise do AsyncStorage:", e);
+  }
+}
+
+export async function clearAnalises(): Promise<void> {
+  try {
+    await AsyncStorage.removeItem("analises");
+  } catch (e) {
+    console.error("Erro ao limpar as análises do AsyncStorage:", e);
+  }
 }

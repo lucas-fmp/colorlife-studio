@@ -1,39 +1,39 @@
-import { StyleSheet } from 'react-native';
-import fonts from '../../styles/fonts';
-import colors from '../../styles/colors';
+import { StyleSheet } from "react-native";
+import fonts from "../../styles/fonts";
+import colors from "../../styles/colors";
 
 export const styles = StyleSheet.create({
-  homeContainer: {
+  container: {
     flex: 1,
     backgroundColor: colors.white,
   },
 
-  homeLogoContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+  logoContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     height: 160,
     marginVertical: 60,
   },
 
-  homeLogo: {
-    height: '100%',
+  logo: {
+    height: "100%",
   },
 
-  homeButtonsContainer: {
+  buttonsContainer: {
     marginBottom: 40,
   },
 
-  homeButton: {
+  button: {
     backgroundColor: colors.black,
-    alignSelf: 'center',
-    alignItems: 'center',
-    width: '70%',
+    alignSelf: "center",
+    alignItems: "center",
+    width: "70%",
     paddingVertical: 16,
     marginBottom: 15,
   },
 
-  homeButtonText: {
+  buttonText: {
     color: colors.white,
     fontFamily: fonts.f400regular,
   },

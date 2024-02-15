@@ -3,19 +3,25 @@ import fonts from "../../styles/fonts";
 import colors from "../../styles/colors";
 
 export const styles = StyleSheet.create({
-  analiseContainer: {
+  container: {
     flex: 1,
     backgroundColor: colors.white,
   },
 
-  analiseBackIcon: {
+  scrollView: {
+    justifyContent: "space-between",
+    marginBottom: 40,
+    flexGrow: 1,
+  },
+
+  backIcon: {
     position: "absolute",
     left: 20,
     top: 20,
     zIndex: 10,
   },
 
-  analiseLogoContainer: {
+  logoContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -23,43 +29,54 @@ export const styles = StyleSheet.create({
     paddingVertical: 20,
   },
 
-  analiseLogo: {
+  logo: {
     height: "100%",
   },
 
-  analiseTitle: {
+  title: {
     color: colors.black,
     fontFamily: fonts.f600semiBold,
     fontSize: 24,
     textAlign: "center",
     paddingBottom: 12,
-    letterSpacing: -1,
+    width: "70%",
+    alignSelf: "center",
   },
 
-  analiseContentContainer: {
+  contentContainer: {
     gap: 10,
     alignItems: "center",
+    display: "flex",
+    flexGrow: 1,
   },
 
-  analiseText: {
+  text: {
     color: colors.black,
     fontFamily: fonts.f400regular,
     fontSize: 14,
     textAlign: "justify",
-    width: "80%",
-    marginBottom: 20,
+    paddingBottom: 12,
+    width: "70%",
   },
 
-  analiseButton: {
-    backgroundColor: colors.black,
+  textInput: {
+    width: "70%",
+    borderWidth: 0.5,
+    paddingVertical: 8,
+    marginBottom: 10,
+    paddingHorizontal: 12,
+  },
+
+  button: {
     alignSelf: "center",
     alignItems: "center",
     width: "70%",
     paddingVertical: 16,
-    marginBottom: 20,
+    marginBottom: 16,
+    backgroundColor: colors.black,
   },
 
-  analiseButtonText: {
+  buttonText: {
     color: colors.white,
     fontFamily: fonts.f400regular,
   },

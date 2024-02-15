@@ -3,25 +3,25 @@ import fonts from "../../styles/fonts";
 import colors from "../../styles/colors";
 
 export const styles = StyleSheet.create({
-  analiseContainer: {
+  container: {
     flex: 1,
     backgroundColor: colors.white,
   },
 
-  analiseScrollView: {
+  scrollView: {
     justifyContent: "space-between",
     marginBottom: 40,
     flexGrow: 1,
   },
 
-  analiseBackIcon: {
+  backIcon: {
     position: "absolute",
     left: 20,
     top: 20,
     zIndex: 10,
   },
 
-  analiseLogoContainer: {
+  logoContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -29,54 +29,62 @@ export const styles = StyleSheet.create({
     paddingVertical: 20,
   },
 
-  analiseLogo: {
+  logo: {
     height: "100%",
   },
 
-  analiseTitle: {
+  title: {
     color: colors.black,
     fontFamily: fonts.f600semiBold,
     fontSize: 24,
     textAlign: "center",
-    paddingBottom: 12,
+    paddingBottom: 16,
     letterSpacing: -1,
   },
 
-  analiseContentContainer: {
+  contentContainer: {
     gap: 10,
     alignItems: "center",
     display: "flex",
     flexGrow: 1,
+    flex: 1,
   },
 
-  analiseText: {
-    color: colors.black,
-    fontFamily: fonts.f400regular,
-    fontSize: 14,
-    textAlign: "center",
-    paddingBottom: 12,
-    width: "85%",
-  },
-
-  analiseTextInput: {
-    width: "70%",
-    borderWidth: 0.5,
-    paddingVertical: 8,
-    marginBottom: 10,
-    paddingHorizontal: 12,
-  },
-
-  analiseButton: {
+  button: {
     alignSelf: "center",
+    width: "100%",
     alignItems: "center",
-    width: "70%",
-    paddingVertical: 16,
-    marginBottom: 16,
-    backgroundColor: colors.black,
+    paddingLeft: 20,
+    height: 80,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "black",
   },
 
-  analiseButtonText: {
-    color: colors.white,
+  textButton: {
+    color: "white",
+    maxWidth: "70%",
     fontFamily: fonts.f400regular,
+    paddingTop: 5,
+    fontSize: 16,
+  },
+
+  imageButton: {
+    width: 80,
+    height: 80,
+  },
+
+  swipeableContainer: {
+    width: "85%",
+    alignSelf: "center",
+    height: 80,
+    marginBottom: 10,
+  },
+
+  deleteIcon: {
+    width: 60,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "red",
   },
 });

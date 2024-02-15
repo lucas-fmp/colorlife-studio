@@ -5,14 +5,11 @@ import Splash from "../lotties/Splash";
 import Home from "../screens/Home";
 import Dossies from "../screens/Dossies";
 import Cartelas from "../screens/Cartelas";
-import AnaliseSelecionarImagem from "../screens/AnaliseSelecionarImagem";
-import AnaliseArquivoPronto from "../screens/AnaliseArquivoPronto";
+import SelecionarImagem from "../screens/SelecionarImagem";
+import ArquivoPronto from "../screens/ArquivoPronto";
 import AnaliseVisualizar from "../screens/AnaliseVisualizar";
-import MelhoresCoresSelecionarImagem from "../screens/MelhoresCoresSelecionarImagem";
-import MelhoresCoresArquivoPronto from "../screens/MelhoresCoresArquivoPronto";
 import MelhoresCoresVisualizar from "../screens/MelhoresCoresVisualizar";
-import AnaliseSelecao from "../screens/AnaliseSelecao";
-import AnaliseHistorico from "../screens/AnaliseHistorico";
+import Historico from "../screens/Historico";
 
 type DynamicParamValue = string;
 
@@ -23,14 +20,11 @@ type DynamicRouteParams = {
 export type RootStackParamList = {
   Splash: undefined;
   Home: undefined;
-  AnaliseSelecao: undefined;
-  AnaliseHistorico: undefined;
-  AnaliseSelecionarImagem: undefined;
-  AnaliseArquivoPronto: DynamicRouteParams;
+  SelecionarImagem: undefined;
+  ArquivoPronto: DynamicRouteParams;
   AnaliseVisualizar: DynamicRouteParams;
-  MelhoresCoresSelecionarImagem: undefined;
-  MelhoresCoresArquivoPronto: DynamicRouteParams;
   MelhoresCoresVisualizar: DynamicRouteParams;
+  Historico: undefined;
   Cartelas: undefined;
   Dossies: undefined;
 };
@@ -45,29 +39,14 @@ function StackNavigator() {
       <Stack.Screen name="Splash" component={Splash} />
 
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="AnaliseSelecao" component={AnaliseSelecao} />
-      <Stack.Screen name="AnaliseHistorico" component={AnaliseHistorico} />
-      <Stack.Screen
-        name="AnaliseSelecionarImagem"
-        component={AnaliseSelecionarImagem}
-      />
-      <Stack.Screen
-        name="AnaliseArquivoPronto"
-        component={AnaliseArquivoPronto}
-      />
+      <Stack.Screen name="SelecionarImagem" component={SelecionarImagem} />
+      <Stack.Screen name="ArquivoPronto" component={ArquivoPronto} />
       <Stack.Screen name="AnaliseVisualizar" component={AnaliseVisualizar} />
-      <Stack.Screen
-        name="MelhoresCoresSelecionarImagem"
-        component={MelhoresCoresSelecionarImagem}
-      />
-      <Stack.Screen
-        name="MelhoresCoresArquivoPronto"
-        component={MelhoresCoresArquivoPronto}
-      />
       <Stack.Screen
         name="MelhoresCoresVisualizar"
         component={MelhoresCoresVisualizar}
       />
+      <Stack.Screen name="Historico" component={Historico} />
       <Stack.Screen name="Cartelas" component={Cartelas} />
       <Stack.Screen name="Dossies" component={Dossies} />
     </Stack.Navigator>

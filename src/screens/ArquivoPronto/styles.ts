@@ -3,19 +3,19 @@ import fonts from "../../styles/fonts";
 import colors from "../../styles/colors";
 
 export const styles = StyleSheet.create({
-  analiseContainer: {
+  container: {
     flex: 1,
     backgroundColor: colors.white,
   },
 
-  analiseBackIcon: {
+  backIcon: {
     position: "absolute",
     left: 20,
     top: 20,
     zIndex: 10,
   },
 
-  analiseLogoContainer: {
+  logoContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -23,33 +23,35 @@ export const styles = StyleSheet.create({
     paddingVertical: 20,
   },
 
-  analiseLogo: {
+  logo: {
     height: "100%",
   },
 
-  analiseTitle: {
+  title: {
     color: colors.black,
     fontFamily: fonts.f600semiBold,
     fontSize: 20,
     textAlign: "center",
+    width: "70%",
     paddingBottom: 12,
+    alignSelf: "center",
   },
 
-  analiseContentContainer: {
+  contentContainer: {
     gap: 10,
     alignItems: "center",
   },
 
-  analiseText: {
+  text: {
     color: colors.black,
     fontFamily: fonts.f400regular,
     fontSize: 14,
     textAlign: "justify",
-    width: "80%",
+    width: "70%",
     marginBottom: 20,
   },
 
-  analiseButton: {
+  button: {
     backgroundColor: colors.black,
     alignSelf: "center",
     alignItems: "center",
@@ -58,7 +60,7 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
   },
 
-  analiseButtonText: {
+  buttonText: {
     color: colors.white,
     fontFamily: fonts.f400regular,
   },

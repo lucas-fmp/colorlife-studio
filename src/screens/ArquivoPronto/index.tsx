@@ -5,19 +5,18 @@ import colors from "../../styles/colors";
 import { MaterialIcons } from "@expo/vector-icons";
 import { RouteProp, useNavigation } from "@react-navigation/native";
 import { RootStackParamList, StackNavigation } from "../../routes/stack.routes";
-import { getAnalises } from "../../utils/manipulateImg";
 
 type Props = {
-  route: RouteProp<RootStackParamList, "AnaliseArquivoPronto">;
+  route: RouteProp<RootStackParamList, "ArquivoPronto">;
 };
 
 export default function AnaliseArquivoPronto({ route }: Props) {
-  const { uri } = route.params;
+  const { uri, name } = route.params;
 
   const { navigate } = useNavigation<StackNavigation>();
 
   return (
-    <View style={styles.analiseContainer}>
+    <View style={styles.container}>
       <StatusBar
         barStyle="dark-content"
         translucent={false}
@@ -25,40 +24,43 @@ export default function AnaliseArquivoPronto({ route }: Props) {
       />
 
       <TouchableOpacity
-        style={styles.analiseBackIcon}
-        onPress={() => navigate("AnaliseSelecao")}
+        style={styles.backIcon}
+        onPress={() => navigate("Home")}
       >
         <MaterialIcons name="arrow-back-ios-new" size={24} color="black" />
       </TouchableOpacity>
 
-      <View style={styles.analiseLogoContainer}>
+      <View style={styles.logoContainer}>
         <Image
           source={require("../../assets/full-logo.png")}
-          style={styles.analiseLogo}
+          style={styles.logo}
           resizeMode="contain"
         />
       </View>
 
-      <Text style={styles.analiseTitle}>Seu arquivo ficou pronto!</Text>
+      <Text style={styles.title}>Arquivos de {name}</Text>
 
-      <View style={styles.analiseContentContainer}>
-        <Text style={styles.analiseText}>
-          Você poderá também acessar esta e outras análises já feitas no
-          Histórico de Análises.
+      <View style={styles.contentContainer}>
+        <Text style={styles.text}>
+          Toque nos botões abaixo para visualizar os arquivos.
         </Text>
 
         <TouchableOpacity
-          style={styles.analiseButton}
+          style={styles.button}
           onPress={() => navigate("AnaliseVisualizar", { uri })}
         >
-          <Text style={styles.analiseButtonText}>VISUALIZAR ANÁLISE</Text>
+          <Text style={styles.buttonText}>ANÁLISE DIGITAL</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.analiseButton}
-          onPress={() => navigate("AnaliseHistorico")}
+          style={styles.button}
+          onPress={() => navigate("MelhoresCoresVisualizar", { uri })}
         >
-          <Text style={styles.analiseButtonText}>HISTÓRICO DE ANÁLISES</Text>
+          <Text style={styles.buttonText}>MELHORES CORES</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <Text style={styles.buttonText}>FICHA DE DIAGNÓSTICO</Text>
         </TouchableOpacity>
       </View>
 
