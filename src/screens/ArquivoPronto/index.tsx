@@ -32,7 +32,7 @@ export default function AnaliseArquivoPronto({ route }: Props) {
 
       <View style={styles.logoContainer}>
         <Image
-          source={require("../../assets/full-logo.png")}
+          source={require("../../assets/logo/full-logo.png")}
           style={styles.logo}
           resizeMode="contain"
         />
@@ -47,7 +47,7 @@ export default function AnaliseArquivoPronto({ route }: Props) {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigate("AnaliseVisualizar", { uri })}
+          onPress={() => navigate("AnaliseVisualizar", { uri, name })}
         >
           <Text style={styles.buttonText}>ANÁLISE DIGITAL</Text>
         </TouchableOpacity>

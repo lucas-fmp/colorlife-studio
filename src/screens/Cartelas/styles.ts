@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
-import fonts from '../../styles/fonts';
-import colors from '../../styles/colors';
+import { StyleSheet } from "react-native";
+import fonts from "../../styles/fonts";
+import colors from "../../styles/colors";
 
 export const styles = StyleSheet.create({
   cartelasContainer: {
@@ -9,22 +9,22 @@ export const styles = StyleSheet.create({
   },
 
   cartelasBackIcon: {
-    position: 'absolute',
+    position: "absolute",
     left: 20,
     top: 20,
     zIndex: 10,
   },
 
   cartelasLogoContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     height: 140,
     paddingVertical: 20,
   },
 
   cartelasLogo: {
-    height: '100%',
+    height: "100%",
   },
 
   cartelasButtonsContainer: {
@@ -35,20 +35,21 @@ export const styles = StyleSheet.create({
     color: colors.black,
     fontFamily: fonts.f600semiBold,
     fontSize: 24,
-    textAlign: 'center',
+    textAlign: "center",
     paddingBottom: 12,
     letterSpacing: -1,
   },
 
   cartelasButton: {
-    alignSelf: 'center',
-    width: '85%',
-    alignItems: 'center',
+    alignSelf: "center",
+    width: "85%",
+    alignItems: "center",
     paddingLeft: 20,
     marginBottom: 10,
     height: 80,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    overflow: "hidden",
   },
 
   cartelasButtonPrimaryText: {
@@ -65,7 +66,8 @@ export const styles = StyleSheet.create({
   },
 
   cartelasButtonImage: {
-    width: 70,
-    height: '100%',
+    width: 80,
+    height: 80,
+    marginRight: -10,
   },
 });

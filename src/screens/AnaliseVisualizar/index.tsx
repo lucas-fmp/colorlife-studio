@@ -5,12 +5,14 @@ import {
   Text,
   useWindowDimensions,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { styles } from "./styles";
 import { RouteProp, useNavigation } from "@react-navigation/native";
 import { RootStackParamList, StackNavigation } from "../../routes/stack.routes";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 import fonts from "../../styles/fonts";
 import colors from "../../styles/colors";
 import PagerView from "react-native-pager-view";
@@ -27,6 +29,14 @@ export default function AnaliseVisualizar({ route }: Props) {
 
   const [turnPhone, setTurnPhone] = useState(true);
   const { goBack } = useNavigation();
+
+  const viewPagerRef = useRef<PagerView>(null);
+
+  const changePage = (page: number) => {
+    if (viewPagerRef.current) {
+      viewPagerRef.current.setPage(page);
+    }
+  };
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -63,7 +73,7 @@ export default function AnaliseVisualizar({ route }: Props) {
       <View
         style={[styles.swiperContainer, { maxHeight: width, width: height }]}
       >
-        <PagerView style={styles.viewPager} initialPage={0}>
+        <PagerView style={styles.viewPager} initialPage={0} ref={viewPagerRef}>
           <View
             style={[styles.swiperPage, { backgroundColor: colors.black }]}
             key="1"
@@ -76,105 +86,343 @@ export default function AnaliseVisualizar({ route }: Props) {
               />
             </TouchableOpacity>
 
-            <Text style={[styles.swiperTitle, { color: colors.white }]}>
-              CONTRASTE
-            </Text>
-            <Text
-              style={[
-                styles.swiperTitle,
-                {
-                  color: colors.white,
-                  marginTop: -20,
-                },
-              ]}
-            >
-              PESSOAL
-            </Text>
+            <View style={styles.swiperHeader}>
+              <Text style={[styles.swiperHeaderText, { color: colors.gray }]}>
+                ANÁLISE DE COLORAÇÃO PESSOAL - DIGITAL
+              </Text>
+
+              <View
+                style={{ flexDirection: "row", alignItems: "center", gap: 10 }}
+              >
+                <Image
+                  source={require("../../assets/logo/white-bold.png")}
+                  style={{ height: 20, width: 20 }}
+                />
+                <Text
+                  style={[styles.swiperHeaderText, { color: colors.white }]}
+                >
+                  COLORLIFE STUDIO
+                </Text>
+              </View>
+            </View>
+
+            <View style={styles.titleContainer}>
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.white,
+                    paddingRight: "15%",
+                  },
+                ]}
+              >
+                {name.toUpperCase()}
+              </Text>
+              <Text style={[styles.swiperHeaderText, { color: colors.white }]}>
+                ESTUDO DE CASO
+              </Text>
+            </View>
           </View>
 
           <View
-            style={[styles.swiperPage, { backgroundColor: colors.black }]}
+            style={[styles.swiperPage, { backgroundColor: colors.white }]}
             key="2"
           >
             <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
-                color="white"
+                color="black"
               />
             </TouchableOpacity>
 
-            <Text style={[styles.swiperTitle, { color: colors.white }]}>
-              SUBTOM
-            </Text>
+            <View style={styles.termosContainer}>
+              <Text style={styles.scrollViewTitle}>TERMOS DE USO</Text>
+
+              <ScrollView>
+                <Text style={styles.scrollViewText}>
+                  • Este material é autoral e de propriedade intelectual de
+                  ColorLife Studio.
+                </Text>
+                <Text style={styles.scrollViewText}>
+                  • Seu uso é exclusivo para consultoras de imagem que
+                  adquiriram o material de forma direta e legal por meio de
+                  compra.
+                </Text>
+                <Text style={styles.scrollViewText}>
+                  • É proibida a reprodução total ou parcial do conteúdo e/ou
+                  compartilhamento do mesmo;
+                </Text>
+                <Text style={styles.scrollViewText}>
+                  • A consultora que adquirir este material está autorizada a
+                  utilizá-lo para realizar a análise de coloração pessoal de
+                  suas próprias clientes;
+                </Text>
+                <Text style={styles.scrollViewText}>
+                  • É proibida a venda do todo ou de parte do material, bem como
+                  o compartilhamento com outras consultoras que não adquiriam o
+                  mesmo.
+                </Text>
+                <Text style={styles.scrollViewText}>
+                  • A Cópia ou comercialização ilegal deste conteúdo caracteriza
+                  crime, sob pena do artigo 184.
+                </Text>
+                <Text style={styles.scrollViewText}>
+                  • “Art. 184. Violar os direitos de autor e os que lhe são
+                  conexos: Pena - Detenção, de 3 Meses a 1 Ano, ou Multa.”
+                </Text>
+                <Text style={[styles.scrollViewText, { paddingBottom: 20 }]}>
+                  • Direitos de Autor. TODOS OS DIREITOS RESERVADOS.
+                </Text>
+
+                <Text style={styles.scrollViewText}>
+                  “O plágio pode ser definido como a cópia, dissimulada ou
+                  disfarçada, do todo ou de parte da forma pela qual um
+                  determinado criador exprimiu suas ideias, ou seja, da obra
+                  alheia, com a finalidade de atribuir-se a autoria da criação
+                  intelectual e, a partir daí, usufruir o plagiador das
+                  vantagens da autoria de uma obra”. (Plágio e Outros estudos em
+                  Direito de Autor. Rio de Janeiro: Lumen Juris. Pág. 21).
+                </Text>
+              </ScrollView>
+            </View>
           </View>
 
           <View
-            style={[styles.swiperPage, { backgroundColor: colors.black }]}
+            style={[styles.swiperPage, { backgroundColor: colors.white }]}
             key="3"
           >
             <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
-                color="white"
+                color="black"
               />
             </TouchableOpacity>
 
-            <Text style={[styles.swiperTitle, { color: colors.white }]}>
-              PRETO E BRANCO
-            </Text>
+            <View style={styles.termosContainer}>
+              <Text style={styles.scrollViewTitle}>ÍNDICE</Text>
+
+              <ScrollView>
+                <TouchableOpacity
+                  style={{ marginBottom: 5 }}
+                  onPress={() => changePage(3)}
+                >
+                  <Text style={styles.scrollViewText}>
+                    1. CONTRASTE PESSOAL
+                  </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={{ marginBottom: 5 }}
+                  onPress={() => changePage(8)}
+                >
+                  <Text style={styles.scrollViewText}>2. SUBTOM DE PELE</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={{ marginBottom: 5 }}
+                  onPress={() => changePage(13)}
+                >
+                  <Text style={styles.scrollViewText}>
+                    3. DIMENSÕES (TEMPERATURA, INTENSIDADE E PROFUNDIDADE)
+                  </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={{ marginBottom: 5 }}
+                  onPress={() => changePage(20)}
+                >
+                  <Text style={styles.scrollViewText}>
+                    4. CARTELAS COM A MESMA DIMENSÃO (SOBRENOME)
+                  </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={{ marginBottom: 5 }}
+                  onPress={() => changePage(27)}
+                >
+                  <Text style={styles.scrollViewText}>
+                    5. CARTELAS - COMPARATIVO ENTRE AS TRÊS CARTELAS DA MESMA
+                    ESTAÇÃO
+                  </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={{ marginBottom: 5 }}
+                  onPress={() => changePage(32)}
+                >
+                  <Text style={styles.scrollViewText}>6. PRETO E BRANCO</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={{ marginBottom: 5 }}
+                  onPress={() => changePage(35)}
+                >
+                  <Text style={styles.scrollViewText}>7. METAIS</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={{ marginBottom: 5 }}
+                  onPress={() => changePage(38)}
+                >
+                  <Text style={styles.scrollViewText}>
+                    8. O SEU TOM DE CADA COR
+                  </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={{ marginBottom: 5 }}
+                  onPress={() => changePage(44)}
+                >
+                  <Text style={styles.scrollViewText}>
+                    9. PAISAGENS - COMPARANDO A CONTINUIDADE DA BELEZA
+                  </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={{ marginBottom: 5 }}
+                  onPress={() => changePage(49)}
+                >
+                  <Text style={styles.scrollViewText}>
+                    10. ESTAMPAS - COMPARANDO A CONTINUIDADE DA BELEZA
+                  </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={{ marginBottom: 5 }}
+                  onPress={() => changePage(57)}
+                >
+                  <Text style={styles.scrollViewText}>
+                    11. ESTAMPAS DE CADA CARTELA
+                  </Text>
+                </TouchableOpacity>
+              </ScrollView>
+            </View>
           </View>
 
           <View
-            style={[styles.swiperPage, { backgroundColor: colors.black }]}
+            style={[styles.swiperPage, { backgroundColor: colors.white }]}
             key="4"
           >
             <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
-                color="white"
+                color="black"
               />
             </TouchableOpacity>
 
-            <Text style={[styles.swiperTitle, { color: colors.white }]}>
-              METAIS
-            </Text>
+            <TouchableOpacity
+              style={styles.analiseIndexIcon}
+              onPress={() => changePage(2)}
+            >
+              <Feather name="list" size={24} color="black" />
+            </TouchableOpacity>
+
+            <View
+              style={{
+                position: "absolute",
+                width: "80%",
+                bottom: 60,
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 75,
+                  },
+                ]}
+              >
+                CONTRASTE
+              </Text>
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 75,
+                  },
+                ]}
+              >
+                PESSOAL
+              </Text>
+            </View>
           </View>
 
           <View
-            style={[styles.swiperPage, { backgroundColor: colors.black }]}
+            style={[styles.swiperPage, { backgroundColor: colors.white }]}
             key="5"
           >
             <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
-                color="white"
+                color="black"
               />
             </TouchableOpacity>
 
-            <Text style={[styles.swiperTitle, { color: colors.white }]}>
-              DIMENSÕES
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
             </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
           </View>
 
           <View
-            style={[styles.swiperPage, { backgroundColor: colors.black }]}
+            style={[styles.swiperPage, { backgroundColor: colors.white }]}
             key="6"
           >
             <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
                 size={24}
-                color="white"
+                color="black"
               />
             </TouchableOpacity>
 
-            <Text style={[styles.swiperTitle, { color: colors.white }]}>
-              ESTAÇÕES
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
             </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
           </View>
 
           <View style={styles.swiperPage} key="7">
@@ -229,21 +477,70 @@ export default function AnaliseVisualizar({ route }: Props) {
                   maxHeight: width - 100,
                   height: width - 100,
                   width: height,
-                  gap: 30,
+                  gap: 60,
                 },
               ]}
             >
-              <ComparativeCard height={height} cardKey="three" facePath={uri} />
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
 
-              <ComparativeCard height={height} cardKey="four" facePath={uri} />
-
-              <ComparativeCard height={height} cardKey="five" facePath={uri} />
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
             </View>
 
             <Footer opacity={0.5} />
           </View>
 
           <View style={styles.swiperPage} key="9">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.analiseIndexIcon}
+              onPress={() => changePage(2)}
+            >
+              <Feather name="list" size={24} color="black" />
+            </TouchableOpacity>
+
+            <View
+              style={{
+                position: "absolute",
+                width: "80%",
+                bottom: 60,
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 75,
+                  },
+                ]}
+              >
+                SUBTOM
+              </Text>
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 75,
+                  },
+                ]}
+              >
+                DE PELE
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.swiperPage} key="10">
             <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
               <MaterialIcons
                 name="arrow-back-ios-new"
@@ -267,43 +564,9 @@ export default function AnaliseVisualizar({ route }: Props) {
                 },
               ]}
             >
-              <ComparativeCard height={height} cardKey="six" facePath={uri} />
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
 
-              <ComparativeCard height={height} cardKey="seven" facePath={uri} />
-            </View>
-
-            <Footer opacity={0.5} />
-          </View>
-
-          <View style={styles.swiperPage} key="10">
-            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
-              <MaterialIcons
-                name="arrow-back-ios-new"
-                size={24}
-                color="black"
-              />
-            </TouchableOpacity>
-
-            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
-              SUBTOM DE PELE
-            </Text>
-
-            <View
-              style={[
-                styles.comparativeCardsContainer,
-                {
-                  maxHeight: width - 100,
-                  height: width - 100,
-                  width: height,
-                  gap: 30,
-                },
-              ]}
-            >
-              <ComparativeCard height={height} cardKey="eight" facePath={uri} />
-
-              <ComparativeCard height={height} cardKey="nine" facePath={uri} />
-
-              <ComparativeCard height={height} cardKey="ten" facePath={uri} />
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
             </View>
 
             <Footer opacity={0.5} />
@@ -333,20 +596,1828 @@ export default function AnaliseVisualizar({ route }: Props) {
                 },
               ]}
             >
-              <ComparativeCard
-                height={height}
-                cardKey="eleven"
-                facePath={uri}
-              />
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
 
-              <ComparativeCard
-                height={height}
-                cardKey="twelve"
-                facePath={uri}
-              />
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
             </View>
 
             <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="12">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="13">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="14">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.analiseIndexIcon}
+              onPress={() => changePage(2)}
+            >
+              <Feather name="list" size={24} color="black" />
+            </TouchableOpacity>
+
+            <View
+              style={{
+                position: "absolute",
+                width: "80%",
+                bottom: 60,
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 95,
+                    marginBottom: -10,
+                  },
+                ]}
+              >
+                DIMENSÕES
+              </Text>
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 20,
+                    lineHeight: 25,
+                    letterSpacing: 0,
+                  },
+                ]}
+              >
+                TEMPERATURA, INTENSIDADE E PROFUNDIDADE
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.swiperPage} key="15">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="16">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="17">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="18">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="19">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="20">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="21">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.analiseIndexIcon}
+              onPress={() => changePage(2)}
+            >
+              <Feather name="list" size={24} color="black" />
+            </TouchableOpacity>
+
+            <View
+              style={{
+                position: "absolute",
+                width: "80%",
+                bottom: 60,
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 95,
+                    marginBottom: -10,
+                  },
+                ]}
+              >
+                CARTELAS
+              </Text>
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 20,
+                    lineHeight: 25,
+                    letterSpacing: 0,
+                  },
+                ]}
+              >
+                COM A MESMA DIMENSÃO (SOBRENOME)
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.swiperPage} key="22">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="23">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="24">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="25">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="26">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="27">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="28">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.analiseIndexIcon}
+              onPress={() => changePage(2)}
+            >
+              <Feather name="list" size={24} color="black" />
+            </TouchableOpacity>
+
+            <View
+              style={{
+                position: "absolute",
+                width: "80%",
+                bottom: 60,
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 95,
+                    marginBottom: -10,
+                  },
+                ]}
+              >
+                CARTELAS
+              </Text>
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 20,
+                    lineHeight: 25,
+                    letterSpacing: 0,
+                  },
+                ]}
+              >
+                COMPARATIVO ENTRE AS TRÊS CARTELAS DA MESMA ESTAÇÃO
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.swiperPage} key="29">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="30">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="31">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="32">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="33">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.analiseIndexIcon}
+              onPress={() => changePage(2)}
+            >
+              <Feather name="list" size={24} color="black" />
+            </TouchableOpacity>
+
+            <View
+              style={{
+                position: "absolute",
+                width: "80%",
+                bottom: 60,
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 75,
+                  },
+                ]}
+              >
+                PRETO E
+              </Text>
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 75,
+                  },
+                ]}
+              >
+                BRANCO
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.swiperPage} key="34">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="35">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="36">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.analiseIndexIcon}
+              onPress={() => changePage(2)}
+            >
+              <Feather name="list" size={24} color="black" />
+            </TouchableOpacity>
+
+            <View
+              style={{
+                position: "absolute",
+                width: "80%",
+                bottom: 60,
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 75,
+                  },
+                ]}
+              >
+                METAIS
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.swiperPage} key="37">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="38">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="39">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.analiseIndexIcon}
+              onPress={() => changePage(2)}
+            >
+              <Feather name="list" size={24} color="black" />
+            </TouchableOpacity>
+
+            <View
+              style={{
+                position: "absolute",
+                width: "80%",
+                bottom: 60,
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 75,
+                  },
+                ]}
+              >
+                O SEU TOM DE
+              </Text>
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 75,
+                  },
+                ]}
+              >
+                CADA COR
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.swiperPage} key="40">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="41">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="42">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="43">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="44">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="45">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.analiseIndexIcon}
+              onPress={() => changePage(2)}
+            >
+              <Feather name="list" size={24} color="black" />
+            </TouchableOpacity>
+
+            <View
+              style={{
+                position: "absolute",
+                width: "80%",
+                bottom: 60,
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 95,
+                    marginBottom: -10,
+                  },
+                ]}
+              >
+                PAISAGENS
+              </Text>
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 20,
+                    lineHeight: 25,
+                    letterSpacing: 0,
+                  },
+                ]}
+              >
+                COMPARANDO A CONTINUIDADE DA BELEZA
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.swiperPage} key="46">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="47">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="48">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="49">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="50">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.analiseIndexIcon}
+              onPress={() => changePage(2)}
+            >
+              <Feather name="list" size={24} color="black" />
+            </TouchableOpacity>
+
+            <View
+              style={{
+                position: "absolute",
+                width: "80%",
+                bottom: 60,
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 95,
+                    marginBottom: -10,
+                  },
+                ]}
+              >
+                ESTAMPAS
+              </Text>
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 20,
+                    lineHeight: 25,
+                    letterSpacing: 0,
+                  },
+                ]}
+              >
+                COMPARANDO A CONTINUIDADE DA BELEZA
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.swiperPage} key="51">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="52">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="53">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="54">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="55">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="56">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="57">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="58">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.analiseIndexIcon}
+              onPress={() => changePage(2)}
+            >
+              <Feather name="list" size={24} color="black" />
+            </TouchableOpacity>
+
+            <View
+              style={{
+                position: "absolute",
+                width: "80%",
+                bottom: 60,
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 70,
+                    lineHeight: 95,
+                    marginBottom: -10,
+                  },
+                ]}
+              >
+                ESTAMPAS
+              </Text>
+              <Text
+                style={[
+                  styles.swiperTitle,
+                  {
+                    color: colors.black,
+                    fontSize: 20,
+                    lineHeight: 25,
+                    letterSpacing: 0,
+                  },
+                ]}
+              >
+                DE CADA CARTELA
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.swiperPage} key="59">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="60">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="61">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View style={styles.swiperPage} key="62">
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="black"
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.swiperHeader, { letterSpacing: 4 }]}>
+              SUBTOM DE PELE
+            </Text>
+
+            <View
+              style={[
+                styles.comparativeCardsContainer,
+                {
+                  maxHeight: width - 100,
+                  height: width - 100,
+                  width: height,
+                  gap: 60,
+                },
+              ]}
+            >
+              <ComparativeCard height={height} cardKey="one" facePath={uri} />
+
+              <ComparativeCard height={height} cardKey="two" facePath={uri} />
+            </View>
+
+            <Footer opacity={0.5} />
+          </View>
+
+          <View
+            style={[styles.swiperPage, { backgroundColor: colors.black }]}
+            key="63"
+          >
+            <TouchableOpacity style={styles.analiseBackIcon} onPress={goBack}>
+              <MaterialIcons
+                name="arrow-back-ios-new"
+                size={24}
+                color="white"
+              />
+            </TouchableOpacity>
           </View>
         </PagerView>
       </View>

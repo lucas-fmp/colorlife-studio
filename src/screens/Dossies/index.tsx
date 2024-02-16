@@ -6,13 +6,13 @@ import {
   StatusBar,
   ScrollView,
   Linking,
-} from 'react-native';
-import { styles } from './styles';
-import Footer from '../../components/Footer';
-import colors from '../../styles/colors';
-import { MaterialIcons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
-import urlsDossies from '../../utils/urlsDossies';
+} from "react-native";
+import { styles } from "./styles";
+import Footer from "../../components/Footer";
+import colors from "../../styles/colors";
+import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import urlsDossies from "../../utils/urlsDossies";
 
 export default function Dossies() {
   const { goBack } = useNavigation();
@@ -31,7 +31,7 @@ export default function Dossies() {
 
       <View style={styles.dossiesLogoContainer}>
         <Image
-          source={require('../../assets/full-logo.png')}
+          source={require("../../assets/logo/full-logo.png")}
           style={styles.dossiesLogo}
           resizeMode="contain"
         />
@@ -53,7 +53,7 @@ export default function Dossies() {
           </View>
           <View>
             <Image
-              source={require('../../assets/logo-botao.svg')}
+              source={require("../../assets/logo/inverno-brilhante.png")}
               style={[
                 styles.dossiesButtonImage,
                 {
@@ -76,7 +76,7 @@ export default function Dossies() {
           </View>
           <View>
             <Image
-              source={require('../../assets/logo-botao.svg')}
+              source={require("../../assets/logo/inverno-escuro.png")}
               style={[
                 styles.dossiesButtonImage,
                 {
@@ -99,7 +99,7 @@ export default function Dossies() {
           </View>
           <View>
             <Image
-              source={require('../../assets/logo-botao.svg')}
+              source={require("../../assets/logo/inverno-frio.png")}
               style={[
                 styles.dossiesButtonImage,
                 {
@@ -122,7 +122,7 @@ export default function Dossies() {
           </View>
           <View>
             <Image
-              source={require('../../assets/logo-botao.svg')}
+              source={require("../../assets/logo/outono-escuro.png")}
               style={[
                 styles.dossiesButtonImage,
                 {
@@ -145,7 +145,7 @@ export default function Dossies() {
           </View>
           <View>
             <Image
-              source={require('../../assets/logo-botao.svg')}
+              source={require("../../assets/logo/outono-quente.png")}
               style={[
                 styles.dossiesButtonImage,
                 {
@@ -168,7 +168,7 @@ export default function Dossies() {
           </View>
           <View>
             <Image
-              source={require('../../assets/logo-botao.svg')}
+              source={require("../../assets/logo/outono-suave.png")}
               style={[
                 styles.dossiesButtonImage,
                 {
@@ -191,7 +191,7 @@ export default function Dossies() {
           </View>
           <View>
             <Image
-              source={require('../../assets/logo-botao.svg')}
+              source={require("../../assets/logo/primavera-brilhante.png")}
               style={[
                 styles.dossiesButtonImage,
                 {
@@ -214,7 +214,7 @@ export default function Dossies() {
           </View>
           <View>
             <Image
-              source={require('../../assets/logo-botao.svg')}
+              source={require("../../assets/logo/primavera-clara.png")}
               style={[
                 styles.dossiesButtonImage,
                 {
@@ -237,7 +237,7 @@ export default function Dossies() {
           </View>
           <View>
             <Image
-              source={require('../../assets/logo-botao.svg')}
+              source={require("../../assets/logo/primavera-quente.png")}
               style={[
                 styles.dossiesButtonImage,
                 {
@@ -257,7 +257,7 @@ export default function Dossies() {
           </View>
           <View>
             <Image
-              source={require('../../assets/logo-botao.svg')}
+              source={require("../../assets/logo/verao-claro.png")}
               style={[
                 styles.dossiesButtonImage,
                 {
@@ -277,7 +277,7 @@ export default function Dossies() {
           </View>
           <View>
             <Image
-              source={require('../../assets/logo-botao.svg')}
+              source={require("../../assets/logo/verao-frio.png")}
               style={[
                 styles.dossiesButtonImage,
                 {
@@ -297,7 +297,7 @@ export default function Dossies() {
           </View>
           <View>
             <Image
-              source={require('../../assets/logo-botao.svg')}
+              source={require("../../assets/logo/verao-suave.png")}
               style={[
                 styles.dossiesButtonImage,
                 {

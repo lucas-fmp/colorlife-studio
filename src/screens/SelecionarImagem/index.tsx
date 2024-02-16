@@ -64,7 +64,7 @@ export default function SelecionarImagem() {
 
       <View style={styles.logoContainer}>
         <Image
-          source={require("../../assets/full-logo.png")}
+          source={require("../../assets/logo/full-logo.png")}
           style={styles.logo}
           resizeMode="contain"
         />
