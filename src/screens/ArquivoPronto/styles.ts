@@ -30,11 +30,9 @@ export const styles = StyleSheet.create({
   title: {
     color: colors.black,
     fontFamily: fonts.f600semiBold,
-    fontSize: 20,
+    fontSize: 30,
     textAlign: "center",
-    width: "70%",
-    paddingBottom: 12,
-    alignSelf: "center",
+    lineHeight: 35,
   },
 
   contentContainer: {
@@ -44,11 +42,10 @@ export const styles = StyleSheet.create({
 
   text: {
     color: colors.black,
-    fontFamily: fonts.f400regular,
-    fontSize: 14,
+    fontFamily: fonts.f300light,
+    fontSize: 16,
     textAlign: "justify",
-    width: "70%",
-    marginBottom: 20,
+    letterSpacing: 5,
   },
 
   button: {

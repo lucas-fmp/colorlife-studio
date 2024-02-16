@@ -1,7 +1,7 @@
-import { Image, View } from 'react-native';
-import { styles } from './styles';
-import Svg, { Image as SvgImage, ClipPath, Ellipse } from 'react-native-svg';
-import ImagePaths from '../../utils/comparativeCardsPaths';
+import { Image, View } from "react-native";
+import { styles } from "./styles";
+import Svg, { Image as SvgImage, ClipPath, Ellipse } from "react-native-svg";
+import ImagePaths from "../../utils/comparativeCardsPaths";
 
 type ImagePathsKeys = keyof typeof ImagePaths;
 
@@ -23,20 +23,20 @@ export default function ComparativeCard({
       <Image
         source={cardPath}
         style={{
-          height: '100%',
-          maxWidth: height / 4,
+          height: "100%",
+          maxWidth: height / 3.2,
         }}
         resizeMode="contain"
       />
 
-      <Svg width="200" height="200" style={styles.comparativeFaceSVG}>
+      <Svg width="250" height="250" style={styles.comparativeFaceSVG}>
         <ClipPath id="clip">
-          <Ellipse cx="100" cy="100" rx="70" ry="100" />
+          <Ellipse cx="125" cy="125" rx="90" ry="125" />
         </ClipPath>
         <SvgImage
           href={{ uri: facePath }}
-          width="200"
-          height="200"
+          width="250"
+          height="250"
           clipPath="url(#clip)"
         />
       </Svg>

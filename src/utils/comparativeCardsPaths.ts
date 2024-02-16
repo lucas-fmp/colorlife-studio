@@ -1,16 +1,10 @@
 const ImagePaths = {
-  one: require('../assets/cardsComparativos/01.jpg'),
-  two: require('../assets/cardsComparativos/02.jpg'),
-  three: require('../assets/cardsComparativos/03.jpg'),
-  four: require('../assets/cardsComparativos/04.jpg'),
-  five: require('../assets/cardsComparativos/05.jpg'),
-  six: require('../assets/cardsComparativos/06.jpg'),
-  seven: require('../assets/cardsComparativos/07.jpg'),
-  eight: require('../assets/cardsComparativos/08.jpg'),
-  nine: require('../assets/cardsComparativos/09.jpg'),
-  ten: require('../assets/cardsComparativos/10.jpg'),
-  eleven: require('../assets/cardsComparativos/11.jpg'),
-  twelve: require('../assets/cardsComparativos/12.jpg'),
+  contraste01: require("../assets/cardsComparativos/contraste/01.png"),
+  contraste02: require("../assets/cardsComparativos/contraste/02.png"),
+  contraste03: require("../assets/cardsComparativos/contraste/03.png"),
+  contraste04: require("../assets/cardsComparativos/contraste/04.png"),
+  contraste05: require("../assets/cardsComparativos/contraste/05.png"),
+  contraste06: require("../assets/cardsComparativos/contraste/06.png"),
 };
 
 export default ImagePaths;

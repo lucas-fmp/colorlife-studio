@@ -85,7 +85,7 @@ export const styles = StyleSheet.create({
   },
 
   comparativeCardsContainer: {
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center",
     display: "flex",
     flexDirection: "row",

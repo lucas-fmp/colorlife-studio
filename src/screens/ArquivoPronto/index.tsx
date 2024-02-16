@@ -38,13 +38,22 @@ export default function AnaliseArquivoPronto({ route }: Props) {
         />
       </View>
 
-      <Text style={styles.title}>Arquivos de {name}</Text>
+      <View
+        style={{
+          width: "70%",
+          paddingBottom: 16,
+          marginVertical: 16,
+          alignItems: "center",
+          alignSelf: "center",
+          gap: 20,
+        }}
+      >
+        <Text style={styles.text}>ESTUDO DE CASO</Text>
+
+        <Text style={styles.title}>{name.toUpperCase()}</Text>
+      </View>
 
       <View style={styles.contentContainer}>
-        <Text style={styles.text}>
-          Toque nos botões abaixo para visualizar os arquivos.
-        </Text>
-
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigate("AnaliseVisualizar", { uri, name })}
